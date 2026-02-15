@@ -1366,6 +1366,25 @@ footer {
         padding-bottom: 92px;
     }
 
+    .about-features {
+        padding-left: 6px;
+    }
+
+    .about-placeholder {
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .about-main-icon {
+        width: 86px;
+        height: 86px;
+    }
+
+    .about-main-icon svg {
+        width: 42px;
+        height: 42px;
+    }
+
     .footer-bottom {
         align-items: center;
     }
