@@ -1271,6 +1271,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
     .hero-float-icons {
         display: none;
     }
@@ -1350,11 +1355,17 @@ footer {
     }
     
     .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
+        bottom: calc(84px + env(safe-area-inset-bottom));
+        right: 14px;
         width: 55px;
         height: 55px;
     }
+
+    .hero,
+    .cta-section {
+        padding-bottom: 92px;
+    }
+
     .footer-bottom {
         align-items: center;
     }
