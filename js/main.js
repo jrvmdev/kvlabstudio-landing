@@ -73,6 +73,35 @@ document
     observer.observe(el);
   });
 
+const projectVideo = document.querySelector('.project-video');
+if (projectVideo) {
+  const source = projectVideo.querySelector('source[data-src]');
+
+  const loadVideo = () => {
+    if (!source || source.src) return;
+    source.src = source.dataset.src || '';
+    projectVideo.load();
+    projectVideo.play().catch(() => {});
+  };
+
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadVideo();
+          obs.unobserve(entry.target);
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.1 }
+    );
+
+    videoObserver.observe(projectVideo);
+  } else {
+    loadVideo();
+  }
+}
+
 document.querySelectorAll('.js-obf-email').forEach((el) => {
   const user = el.getAttribute('data-u');
   const domain = el.getAttribute('data-d');
