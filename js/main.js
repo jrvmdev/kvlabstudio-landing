@@ -4,6 +4,51 @@ const navLinks = document.querySelector('.nav-links');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const heroShowcase = document.querySelector('.hero-showcase');
 const aboutScene = document.querySelector('.about-placeholder');
+const heroSection = document.querySelector('.hero');
+
+const initHeroCinematicBackground = () => {
+  if (!heroSection || prefersReducedMotion) return;
+
+  const pointer = { x: 0.5, y: 0.42, targetX: 0.5, targetY: 0.42 };
+  let rafId = 0;
+
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  const animate = () => {
+    pointer.x += (pointer.targetX - pointer.x) * 0.055;
+    pointer.y += (pointer.targetY - pointer.y) * 0.055;
+    heroSection.style.setProperty('--hero-pointer-x', `${(pointer.x * 100).toFixed(2)}%`);
+    heroSection.style.setProperty('--hero-pointer-y', `${(pointer.y * 100).toFixed(2)}%`);
+    rafId = window.requestAnimationFrame(animate);
+  };
+
+  const updatePointer = (clientX, clientY) => {
+    const rect = heroSection.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    pointer.targetX = clamp((clientX - rect.left) / rect.width, 0, 1);
+    pointer.targetY = clamp((clientY - rect.top) / rect.height, 0, 1);
+  };
+
+  const onMouseMove = (event) => updatePointer(event.clientX, event.clientY);
+  const onTouchMove = (event) => {
+    const touch = event.touches[0];
+    if (!touch) return;
+    updatePointer(touch.clientX, touch.clientY);
+  };
+
+  heroSection.addEventListener('mousemove', onMouseMove, { passive: true });
+  heroSection.addEventListener('touchmove', onTouchMove, { passive: true });
+  heroSection.addEventListener('mouseleave', () => {
+    pointer.targetX = 0.5;
+    pointer.targetY = 0.42;
+  });
+
+  animate();
+
+  // Keep a reference so future enhancements can stop/restart this loop if needed.
+  heroSection.dataset.heroFxRaf = String(rafId);
+};
 
 const getNavOffset = () => {
   const base = nav ? nav.offsetHeight : 88;
@@ -17,6 +62,7 @@ const updateNavState = () => {
 
 updateNavState();
 window.addEventListener('scroll', updateNavState, { passive: true });
+initHeroCinematicBackground();
 
 if (heroShowcase && !prefersReducedMotion) {
   const layers = heroShowcase.querySelectorAll('[data-depth]');

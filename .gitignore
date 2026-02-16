@@ -8,3 +8,5 @@ Thumbs.db
 *.log
 *.tmp
 *.swp
+.vercel
+.env*.local

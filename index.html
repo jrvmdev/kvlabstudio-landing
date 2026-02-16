@@ -28,11 +28,9 @@
     <link rel="shortcut icon" href="/images/kvlab-mark.svg">
     <link rel="apple-touch-icon" href="/images/kvlab-mark.svg">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://unpkg.com" crossorigin>
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/phosphor-regular.css">
     <link rel="stylesheet" href="css/styles.css">
     <script type="application/ld+json">
     {
@@ -75,6 +73,29 @@
     <main id="main-content">
     <section class="hero">
         <div class="hero-grid"></div>
+        <div class="hero-cinematic-bg" aria-hidden="true">
+            <div class="hero-aurora"></div>
+            <div class="hero-electric-arcs">
+                <span class="hero-electric-arc hero-electric-arc--a"></span>
+                <span class="hero-electric-arc hero-electric-arc--b"></span>
+                <span class="hero-electric-arc hero-electric-arc--c"></span>
+            </div>
+            <div class="hero-power-core hero-power-core--main"></div>
+            <div class="hero-power-core hero-power-core--secondary"></div>
+            <div class="hero-power-pulse hero-power-pulse--a"></div>
+            <div class="hero-power-pulse hero-power-pulse--b"></div>
+            <div class="hero-power-pulse hero-power-pulse--c"></div>
+            <div class="hero-power-sparks">
+                <span class="hero-spark hero-spark--a"></span>
+                <span class="hero-spark hero-spark--b"></span>
+                <span class="hero-spark hero-spark--c"></span>
+                <span class="hero-spark hero-spark--d"></span>
+                <span class="hero-spark hero-spark--e"></span>
+                <span class="hero-spark hero-spark--f"></span>
+            </div>
+            <div class="hero-power-scan"></div>
+            <div class="hero-vignette"></div>
+        </div>
         <div class="hero-float-icons" aria-hidden="true">
             <div class="float-icon float-icon--left-1"><i class="ph ph-globe-hemisphere-west"></i></div>
             <div class="float-icon float-icon--left-2"><i class="ph ph-code"></i></div>
@@ -604,13 +625,13 @@
                     </ul>
                     <div class="footer-social" aria-label="Redes sociales de KvLabStudio">
                         <a href="https://github.com/jrvmdev" class="social-link social-link--github" aria-label="GitHub de KvLabStudio" title="GitHub" target="_blank" rel="noopener noreferrer">
-                            <img class="brand-icon-img" src="https://cdn.simpleicons.org/github/cbd5e1" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <i class="ph ph-github-logo" aria-hidden="true"></i>
                         </a>
                         <a href="https://x.com/KvLabStudio" class="social-link social-link--x" aria-label="X de KvLabStudio" title="X" target="_blank" rel="noopener noreferrer">
-                            <img class="brand-icon-img" src="https://cdn.simpleicons.org/x/cbd5e1" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <i class="ph ph-x-logo" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/kvlabstudio?igsh=MWRjOTg5NmF0cHhxaw==" class="social-link social-link--instagram" aria-label="Instagram de KvLabStudio" title="Instagram" target="_blank" rel="noopener noreferrer">
-                            <img class="brand-icon-img" src="https://cdn.simpleicons.org/instagram/cbd5e1" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                            <i class="ph ph-instagram-logo" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
