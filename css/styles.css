@@ -1089,14 +1089,16 @@ nav.nav-scrolled {
 }
 
 @supports (content-visibility: auto) {
-    #portfolio,
-    #proceso,
-    #sobre,
-    .faq-section,
-    #contacto,
-    footer {
-        content-visibility: auto;
-        contain-intrinsic-size: 1px 900px;
+    @media (min-width: 1025px) {
+        #portfolio,
+        #proceso,
+        #sobre,
+        .faq-section,
+        #contacto,
+        footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 900px;
+        }
     }
 }
 
