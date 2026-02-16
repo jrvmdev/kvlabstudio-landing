@@ -1,11 +1,101 @@
 const nav = document.querySelector('nav');
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heroShowcase = document.querySelector('.hero-showcase');
+const aboutScene = document.querySelector('.about-placeholder');
 
 const getNavOffset = () => {
   const base = nav ? nav.offsetHeight : 88;
   return base + 2;
 };
+
+const updateNavState = () => {
+  if (!nav) return;
+  nav.classList.toggle('nav-scrolled', window.scrollY > 14);
+};
+
+updateNavState();
+window.addEventListener('scroll', updateNavState, { passive: true });
+
+if (heroShowcase && !prefersReducedMotion) {
+  const layers = heroShowcase.querySelectorAll('[data-depth]');
+
+  const bringToFront = (activeLayer) => {
+    layers.forEach((layer) => layer.classList.remove('is-front'));
+    activeLayer.classList.add('is-front');
+  };
+
+  if (layers.length > 0) {
+    bringToFront(layers[0]);
+  }
+
+  const moveLayers = (event) => {
+    const rect = heroShowcase.getBoundingClientRect();
+    const relX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relY = (event.clientY - rect.top) / rect.height - 0.5;
+
+    layers.forEach((layer) => {
+      const depth = parseFloat(layer.getAttribute('data-depth') || '0');
+      const offsetX = relX * 28 * depth;
+      const offsetY = relY * 20 * depth;
+      layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+    });
+  };
+
+  const resetLayers = () => {
+    layers.forEach((layer) => {
+      layer.style.transform = '';
+    });
+  };
+
+  heroShowcase.addEventListener('mousemove', moveLayers);
+  heroShowcase.addEventListener('mouseleave', resetLayers);
+
+  layers.forEach((layer) => {
+    layer.addEventListener('mouseenter', () => bringToFront(layer));
+    layer.addEventListener('click', () => bringToFront(layer));
+    layer.addEventListener('touchstart', () => bringToFront(layer), { passive: true });
+  });
+}
+
+if (aboutScene && !prefersReducedMotion) {
+  const layers = aboutScene.querySelectorAll(
+    '[data-depth]:not(.about-orbit):not(.about-core):not(.about-micro-metrics)'
+  );
+
+  const moveLayers = (event) => {
+    const rect = aboutScene.getBoundingClientRect();
+    const relX = (event.clientX - rect.left) / rect.width - 0.5;
+    const relY = (event.clientY - rect.top) / rect.height - 0.5;
+    const pointerX = ((event.clientX - rect.left) / rect.width) * 100;
+    const pointerY = ((event.clientY - rect.top) / rect.height) * 100;
+    aboutScene.style.setProperty('--mx', `${pointerX}%`);
+    aboutScene.style.setProperty('--my', `${pointerY}%`);
+
+    layers.forEach((layer) => {
+      const depth = parseFloat(layer.getAttribute('data-depth') || '0');
+      const offsetX = relX * 26 * depth;
+      const offsetY = relY * 22 * depth;
+      layer.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+    });
+  };
+
+  const resetLayers = () => {
+    layers.forEach((layer) => {
+      layer.style.transform = '';
+    });
+    aboutScene.style.removeProperty('--mx');
+    aboutScene.style.removeProperty('--my');
+    aboutScene.classList.remove('about-boost');
+  };
+
+  aboutScene.addEventListener('mouseenter', () => {
+    aboutScene.classList.add('about-boost');
+  });
+  aboutScene.addEventListener('mousemove', moveLayers);
+  aboutScene.addEventListener('mouseleave', resetLayers);
+}
 
 if (mobileBtn && navLinks) {
   mobileBtn.addEventListener('click', () => {
@@ -43,12 +133,26 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     e.preventDefault();
     const anchorTarget =
-      target.querySelector('.section-header, .contact-info, .hero-content') || target;
-    const top =
-      anchorTarget.getBoundingClientRect().top +
-      window.pageYOffset -
-      getNavOffset();
-    window.scrollTo({ top, behavior: 'smooth' });
+      (href === '#contacto'
+        ? target.querySelector('.contact-wrapper')
+        : href === '#servicios'
+          ? target.querySelector('.services-grid')
+          : target.querySelector('.section-header, .hero-content')) || target;
+
+    const performScroll = (behavior) => {
+      const top =
+        anchorTarget.getBoundingClientRect().top +
+        window.pageYOffset -
+        getNavOffset();
+      window.scrollTo({ top, behavior });
+    };
+
+    performScroll(prefersReducedMotion ? 'auto' : 'smooth');
+
+    if (!prefersReducedMotion) {
+      // Segunda corrección para evitar cortes si cambia el layout durante el scroll.
+      window.setTimeout(() => performScroll('auto'), 420);
+    }
   });
 });
 
@@ -65,7 +169,7 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot')
+  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot, .portfolio-card, .hero-showcase-main, .hero-project-card, .hero-mini-card')
   .forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -73,15 +177,15 @@ document
     observer.observe(el);
   });
 
-const projectVideo = document.querySelector('.project-video');
-if (projectVideo) {
-  const source = projectVideo.querySelector('source[data-src]');
+document.querySelectorAll('video').forEach((videoEl) => {
+  const source = videoEl.querySelector('source[data-src]');
+  if (!source) return;
 
   const loadVideo = () => {
-    if (!source || source.src) return;
+    if (source.src) return;
     source.src = source.dataset.src || '';
-    projectVideo.load();
-    projectVideo.play().catch(() => {});
+    videoEl.load();
+    videoEl.play().catch(() => {});
   };
 
   if ('IntersectionObserver' in window) {
@@ -93,14 +197,14 @@ if (projectVideo) {
           obs.unobserve(entry.target);
         });
       },
-      { rootMargin: '200px 0px', threshold: 0.1 }
+      { rootMargin: '220px 0px', threshold: 0.12 }
     );
 
-    videoObserver.observe(projectVideo);
+    videoObserver.observe(videoEl);
   } else {
     loadVideo();
   }
-}
+});
 
 document.querySelectorAll('.js-obf-email').forEach((el) => {
   const user = el.getAttribute('data-u');

@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="kvlabGrad" x1="18" y1="16" x2="111" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00C2FF"/>
+      <stop offset="1" stop-color="#FF7A18"/>
+    </linearGradient>
+    <linearGradient id="kvlabCore" x1="33" y1="33" x2="95" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B213D"/>
+      <stop offset="1" stop-color="#121C34"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="7" y="7" width="114" height="114" rx="30" fill="#040B18"/>
+  <rect x="9" y="9" width="110" height="110" rx="28" stroke="url(#kvlabGrad)" stroke-width="4"/>
+  <rect x="28" y="28" width="72" height="72" rx="18" fill="url(#kvlabCore)" stroke="rgba(190,224,255,0.32)"/>
+
+  <path d="M43 42L31 64L43 86" stroke="url(#kvlabGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 42L97 64L85 86" stroke="url(#kvlabGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 37L56 91" stroke="#A7D8FF" stroke-width="5.2" stroke-linecap="round"/>
+
+  <circle cx="64" cy="64" r="3.5" fill="#E6F6FF"/>
+</svg>
