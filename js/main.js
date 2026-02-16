@@ -2,12 +2,19 @@ const nav = document.querySelector('nav');
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
 const heroShowcase = document.querySelector('.hero-showcase');
 const aboutScene = document.querySelector('.about-placeholder');
 const heroSection = document.querySelector('.hero');
 
 const initHeroCinematicBackground = () => {
   if (!heroSection || prefersReducedMotion) return;
+  if (isCoarsePointer || isMobileViewport) {
+    heroSection.style.setProperty('--hero-pointer-x', '50%');
+    heroSection.style.setProperty('--hero-pointer-y', '42%');
+    return;
+  }
 
   const pointer = { x: 0.5, y: 0.42, targetX: 0.5, targetY: 0.42 };
   let rafId = 0;
@@ -31,14 +38,7 @@ const initHeroCinematicBackground = () => {
   };
 
   const onMouseMove = (event) => updatePointer(event.clientX, event.clientY);
-  const onTouchMove = (event) => {
-    const touch = event.touches[0];
-    if (!touch) return;
-    updatePointer(touch.clientX, touch.clientY);
-  };
-
   heroSection.addEventListener('mousemove', onMouseMove, { passive: true });
-  heroSection.addEventListener('touchmove', onTouchMove, { passive: true });
   heroSection.addEventListener('mouseleave', () => {
     pointer.targetX = 0.5;
     pointer.targetY = 0.42;
