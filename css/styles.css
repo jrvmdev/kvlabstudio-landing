@@ -1113,6 +1113,18 @@ nav.nav-scrolled {
     aspect-ratio: 16 / 9;
 }
 
+.portfolio-media--zoomed {
+    background: #0b1424;
+    padding: 28px;
+}
+
+.portfolio-media--zoomed .portfolio-image,
+.portfolio-media--zoomed .portfolio-video {
+    transform: scale(0.8);
+    transform-origin: center;
+    border-radius: 10px;
+}
+
 .portfolio-image {
     width: 100%;
     height: 100%;
