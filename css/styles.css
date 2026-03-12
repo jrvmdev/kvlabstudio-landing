@@ -2756,6 +2756,16 @@ footer {
         display: none;
     }
 
+    .hero-cinematic-bg,
+    .hero-grid,
+    .hero-aurora,
+    .hero-electric-arc,
+    .hero-power-core,
+    .hero-power-pulse,
+    .hero-spark {
+        animation: none !important;
+    }
+
     .hero-content::before {
         inset: -14px -10px -12px -10px;
         border-radius: 18px;
