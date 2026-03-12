@@ -1115,12 +1115,12 @@ nav.nav-scrolled {
 
 .portfolio-media--zoomed {
     background: #0b1424;
-    padding: 28px;
+    padding: 18px;
 }
 
 .portfolio-media--zoomed .portfolio-image,
 .portfolio-media--zoomed .portfolio-video {
-    transform: scale(0.8);
+    transform: scale(0.9);
     transform-origin: center;
     border-radius: 10px;
 }
