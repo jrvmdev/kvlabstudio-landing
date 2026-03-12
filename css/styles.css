@@ -2876,6 +2876,22 @@ footer {
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-media {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        background: #0b1424;
+    }
+
+    .portfolio-image,
+    .portfolio-video {
+        object-fit: contain;
+        background: #0b1424;
+    }
     
     .whatsapp-float {
         bottom: calc(84px + env(safe-area-inset-bottom));
