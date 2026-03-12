@@ -106,6 +106,9 @@ if (heroShowcase && !prefersReducedMotion) {
 }
 
 if (aboutScene && !prefersReducedMotion) {
+  if (isCoarsePointer || isMobileViewport) {
+    aboutScene.classList.remove('about-boost');
+  } else {
   const layers = aboutScene.querySelectorAll(
     '[data-depth]:not(.about-orbit):not(.about-core):not(.about-micro-metrics)'
   );
@@ -141,6 +144,7 @@ if (aboutScene && !prefersReducedMotion) {
   });
   aboutScene.addEventListener('mousemove', moveLayers);
   aboutScene.addEventListener('mouseleave', resetLayers);
+  }
 }
 
 if (mobileBtn && navLinks) {

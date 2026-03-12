@@ -2930,14 +2930,34 @@ footer {
         padding-left: 6px;
     }
 
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-images {
+        display: block;
+    }
+
     .about-placeholder {
         text-align: center;
         padding: 24px 20px;
-        min-height: 440px;
+        min-height: 360px;
     }
 
     .about-circuit-layer {
         opacity: 0.7;
+    }
+
+    .about-circuit,
+    .about-circuit::after,
+    .about-circuit-node,
+    .about-glow,
+    .about-orbit,
+    .chip-shell,
+    .chip-shell::before,
+    .chip-halo,
+    .chip-grid {
+        animation: none !important;
     }
 
     .about-circuit--diag1,
