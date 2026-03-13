@@ -1167,6 +1167,10 @@ nav.nav-scrolled {
     padding: 18px 18px 20px;
 }
 
+.portfolio-title-spacer {
+    height: 40px;
+}
+
 .portfolio-body h3 {
     font-size: 24px;
     margin-bottom: 10px;
