@@ -268,6 +268,26 @@ document.querySelectorAll('.js-obf-email').forEach((el) => {
   el.setAttribute('aria-label', `Enviar email a ${email}`);
 });
 
+const buildWhatsappUrl = (rawNumber, message) => {
+  if (!rawNumber) return null;
+  const digits = rawNumber.replace(/\D/g, '');
+  if (!digits) return null;
+  const base = `https://wa.me/${digits}`;
+  if (!message) return base;
+  return `${base}?text=${encodeURIComponent(message)}`;
+};
+
+document.querySelectorAll('.js-obf-wa, .js-obf-wa-float').forEach((el) => {
+  const rawNumber = el.getAttribute('data-n');
+  const rawMessage = el.getAttribute('data-m');
+  const decodedMessage = rawMessage ? decodeURIComponent(rawMessage) : '';
+  const waUrl = buildWhatsappUrl(rawNumber, decodedMessage);
+  if (!waUrl) return;
+
+  el.setAttribute('href', waUrl);
+  el.setAttribute('aria-label', 'Contactar por WhatsApp');
+});
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
@@ -286,8 +306,12 @@ if (contactForm) {
       `Proyecto: ${project}`,
     ].join('\n');
 
-    const wa = `https://wa.me/5491122773720?text=${encodeURIComponent(message)}`;
-    window.open(wa, '_blank', 'noopener,noreferrer');
+    const fallbackNumber = '5491122773720';
+    const obfNumber = document.querySelector('.js-obf-wa')?.getAttribute('data-n');
+    const waUrl = buildWhatsappUrl(obfNumber || fallbackNumber, message);
+    if (waUrl) {
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
 
     contactForm.reset();
   });
