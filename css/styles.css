@@ -2673,20 +2673,15 @@ footer {
             linear-gradient(90deg, rgba(2, 9, 19, 0.8) 0%, rgba(2, 9, 19, 0.58) 44%, rgba(2, 9, 19, 0.92) 100%);
     }
 
-    .hero-cinematic-bg {
-        inset: -10% -16% -8%;
-        opacity: 1;
-        transform: translateZ(0);
-        will-change: auto;
-    }
-
+    /* Mobile performance: reduce paint-heavy hero layers */
+    .hero-cinematic-bg,
     .hero-grid {
-        opacity: 0.8;
-        background-size: 56px 56px;
+        display: none;
     }
 
-    .hero-aurora {
-        filter: blur(5px) saturate(122%);
+    .hero::before,
+    .hero::after {
+        display: none;
     }
 
     .hero-electric-arc--a {
@@ -2760,8 +2755,6 @@ footer {
         display: none;
     }
 
-    .hero-cinematic-bg,
-    .hero-grid,
     .hero-aurora,
     .hero-electric-arc,
     .hero-power-core,
@@ -2794,6 +2787,11 @@ footer {
         margin-bottom: 12px;
         animation: none;
         transform: none !important;
+    }
+
+    .glass-card-hero {
+        box-shadow: none;
+        backdrop-filter: none;
     }
 
     .hero::before,
