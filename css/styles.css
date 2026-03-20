@@ -1014,9 +1014,9 @@ nav.nav-scrolled {
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #4f90ff, #9d68ff);
+    background: linear-gradient(135deg, #33d4ff, #ff9b3d);
     transform: translateY(-2px);
-    box-shadow: 0 10px 34px rgba(101, 111, 246, 0.45);
+    box-shadow: 0 10px 34px rgba(0, 194, 255, 0.45);
 }
 
 .btn-primary:hover::after {
@@ -1037,7 +1037,7 @@ nav.nav-scrolled {
 /* Stats Section */
 /* Services Section */
 .section {
-    padding: 120px 0;
+    padding: 96px 0;
     scroll-margin-top: 110px;
     overflow-x: clip;
 }
@@ -1086,7 +1086,41 @@ nav.nav-scrolled {
 
 .portfolio-card--featured {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
 }
+
+.portfolio-card--featured .portfolio-media {
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    aspect-ratio: auto;
+    min-height: 320px;
+}
+
+.portfolio-card--featured .portfolio-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 32px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-card--featured {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card--featured .portfolio-media {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+
+    .portfolio-card--featured .portfolio-body {
+        padding: 18px;
+    }
+}
+
 
 .portfolio-media {
     position: relative;
@@ -1160,7 +1194,7 @@ nav.nav-scrolled {
 }
 
 .portfolio-body p {
-    color: var(--gray);
+    color: #aec4d8;
     margin-bottom: 14px;
     line-height: 1.65;
 }
@@ -1185,7 +1219,7 @@ nav.nav-scrolled {
 .section-header {
     text-align: center;
     max-width: 900px;
-    margin: 0 auto 80px;
+    margin: 0 auto 56px;
 }
 
 .section-tag {
@@ -1340,7 +1374,7 @@ nav.nav-scrolled {
 }
 
 .service-card p {
-    color: var(--gray);
+    color: var(--gray-light);
     line-height: 1.55;
 }
 
@@ -2882,6 +2916,11 @@ footer {
     .process-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-card--featured {
+        border-color: rgba(0, 194, 255, 0.32);
+        box-shadow: 0 20px 48px -28px rgba(0, 194, 255, 0.5);
     }
 
     .services-grid {
