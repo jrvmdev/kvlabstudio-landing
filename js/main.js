@@ -285,6 +285,8 @@ document.querySelectorAll('.js-obf-wa, .js-obf-wa-float').forEach((el) => {
   if (!waUrl) return;
 
   el.setAttribute('href', waUrl);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener noreferrer');
   el.setAttribute('aria-label', 'Contactar por WhatsApp');
 });
 
@@ -299,7 +301,7 @@ if (contactForm) {
     const project = document.getElementById('project')?.value?.trim() || '';
 
     const message = [
-      'Hola KvLabStudio, quiero consultar por un proyecto.',
+      'Hola, quiero mejorar mi negocio con una solución digital.',
       `Nombre: ${name}`,
       `Email: ${email}`,
       `Telefono: ${phone}`,
