@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo web, landing pages y sistemas para negocios | KvLab Studio</title>
-    <meta name="description" content="Desarrollamos páginas web, landing pages y sistemas que aumentan ventas y optimizan procesos. Soluciones a medida para negocios de cualquier tamaño.">
+    <title>Desarrollo web y landing pages en Buenos Aires | KvLab Studio</title>
+    <meta name="description" content="Diseño y desarrollo de landing pages, sitios web y sistemas digitales para negocios en Buenos Aires y Argentina. Respuesta en menos de 24 horas.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#020617">
-    <meta name="author" content="José Vargas, KvLabStudio">
+    <meta name="author" content="José Vargas, KvLab Studio">
     <link rel="canonical" href="https://kvlabstudio.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
-    <meta property="og:site_name" content="KvLabStudio">
-    <meta property="og:title" content="Desarrollo web, landing pages y sistemas para negocios | KvLab Studio">
-    <meta property="og:description" content="Desarrollamos páginas web, landing pages y sistemas que aumentan ventas y optimizan procesos para negocios de cualquier tamaño.">
+    <meta property="og:site_name" content="KvLab Studio">
+    <meta property="og:title" content="Desarrollo web y landing pages en Buenos Aires | KvLab Studio">
+    <meta property="og:description" content="Diseño y desarrollo de landing pages, sitios web y sistemas digitales para negocios en Buenos Aires y Argentina. Respuesta en menos de 24 horas.">
     <meta property="og:url" content="https://kvlabstudio.com/">
-    <meta property="og:image" content="https://kvlabstudio.com/images/og-kvlabstudio.svg">
-    <meta property="og:image:alt" content="KvLabStudio, desarrollo web, landing pages y sistemas para negocios">
-    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image" content="https://kvlabstudio.com/images/og-kvlabstudio.png">
+    <meta property="og:image:alt" content="KvLab Studio, desarrollo web, landing pages y sistemas para negocios">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Desarrollo web, landing pages y sistemas para negocios | KvLab Studio">
-    <meta name="twitter:description" content="Desarrollamos páginas web, landing pages y sistemas que aumentan ventas y optimizan procesos para negocios de cualquier tamaño.">
+    <meta name="twitter:title" content="Desarrollo web y landing pages en Buenos Aires | KvLab Studio">
+    <meta name="twitter:description" content="Diseño y desarrollo de landing pages, sitios web y sistemas digitales para negocios en Buenos Aires y Argentina. Respuesta en menos de 24 horas.">
     <meta name="twitter:url" content="https://kvlabstudio.com/">
-    <meta name="twitter:image" content="https://kvlabstudio.com/images/og-kvlabstudio.svg">
+    <meta name="twitter:image" content="https://kvlabstudio.com/images/og-kvlabstudio.png">
 
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" type="image/svg+xml" href="/images/kvlab-mark.svg">
@@ -38,19 +40,50 @@
     <link rel="stylesheet" href="css/phosphor-regular.css">
     <link rel="stylesheet" href="css/styles.css">
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ME85J1FH9J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-ME85J1FH9J');
+    </script>
+
+    <script>
+      document.addEventListener('error', function (event) {
+        var el = event.target;
+        if (!el || el.tagName !== 'IMG' || el.dataset.assetFallbackTried === 'true') return;
+
+        var src = el.getAttribute('src') || '';
+        if (src.indexOf('/images/') === 0) {
+          el.dataset.assetFallbackTried = 'true';
+          el.src = src.slice(1);
+        } else if (src.indexOf('images/') === 0 && window.location.protocol !== 'file:') {
+          el.dataset.assetFallbackTried = 'true';
+          el.src = '/' + src;
+        }
+      }, true);
+    </script>
+
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": "https://kvlabstudio.com/#professional-service",
-      "name": "KvLabStudio",
+      "name": "KvLab Studio",
       "url": "https://kvlabstudio.com/",
-      "image": "https://kvlabstudio.com/images/og-kvlabstudio.svg",
-      "logo": "https://kvlabstudio.com/images/og-kvlabstudio.svg",
-      "description": "Desarrollo web, landing pages, automatización y sistemas que aumentan ventas y optimizan procesos para negocios.",
+      "image": "https://kvlabstudio.com/images/og-kvlabstudio.png",
+      "logo": "https://kvlabstudio.com/images/kvlab-mark.svg",
+      "description": "Diseño y desarrollo de landing pages, sitios web, dashboards y automatizaciones para negocios en Buenos Aires y Argentina.",
       "telephone": "+54 9 11 2277-3720",
-      "email": "mailto:kvlabstudio@gmail.com",
+      "email": "kvlabstudio@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
       "founder": {
         "@type": "Person",
         "name": "José Vargas"
@@ -70,6 +103,7 @@
         "Optimización de procesos"
       ],
       "areaServed": [
+        { "@type": "City", "name": "Buenos Aires" },
         { "@type": "Country", "name": "Argentina" },
         { "@type": "Country", "name": "Chile" },
         { "@type": "Country", "name": "Colombia" },
@@ -77,7 +111,7 @@
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Servicios de KvLabStudio",
+        "name": "Servicios de KvLab Studio",
         "itemListElement": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing Pages" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sitios web profesionales" } },
@@ -97,15 +131,16 @@
     <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
     <nav aria-label="Navegación principal">
         <div class="nav-content">
-            <a class="brand-lockup" href="#main-content" aria-label="Ir al inicio de KvLabStudio">
+            <a class="brand-lockup" href="#main-content" aria-label="Ir al inicio de KvLab Studio">
                 <img class="brand-mark" src="/images/kvlab-mark.svg" alt="" aria-hidden="true" width="34" height="34">
-                <span class="logo logo--full">&lt;KvLabStudio/&gt;</span>
-                <span class="logo logo--mobile">KvLabStudio</span>
+                <span class="logo logo--full">KvLab Studio</span>
+                <span class="logo logo--mobile">KvLab Studio</span>
                 <span class="logo logo--compact">KvLab</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="#portfolio">Proyectos</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
                 <li><a href="#proceso">Proceso</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -141,12 +176,6 @@
             <div class="hero-power-scan"></div>
             <div class="hero-vignette"></div>
         </div>
-        <div class="hero-float-icons" aria-hidden="true">
-            <div class="float-icon float-icon--left-1"><i class="ph ph-globe-hemisphere-west"></i></div>
-            <div class="float-icon float-icon--left-2"><i class="ph ph-code"></i></div>
-            <div class="float-icon float-icon--right-1"><i class="ph ph-shield-check"></i></div>
-            <div class="float-icon float-icon--right-2"><i class="ph ph-robot"></i></div>
-        </div>
         <div class="container">
             <div class="hero-layout">
                 <div class="hero-content">
@@ -154,20 +183,20 @@
                         Más leads, más ventas<br>
                         <span class="gradient-text">y menos trabajo manual.</span>
                     </h1>
-                    <p>Diseñamos sistemas digitales que optimizan su operación y convierten visitas en clientes.</p>
+                    <p>Diseño y desarrollo soluciones digitales que convierten visitas en clientes y ayudan a que su negocio funcione con más claridad.</p>
                     <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary js-obf-wa" data-n="5491122773720" data-m="Hola, quiero mejorar mi negocio con una solución digital">
+                        <a href="https://wa.me/5491122773720?text=Hola%2C%20quiero%20mejorar%20mi%20negocio%20con%20una%20soluci%C3%B3n%20digital" class="btn btn-primary js-obf-wa" data-n="5491122773720" data-m="Hola, quiero mejorar mi negocio con una solución digital">
                             Hablar por WhatsApp
                             <span>&rarr;</span>
                         </a>
                         <a href="#contacto" class="btn btn-secondary">
-                            Quiero mejorar mi web
+                            Pedir diagnóstico inicial
                         </a>
                     </div>
                     <div class="hero-proof" aria-label="Puntos clave de valor">
-                        <div class="hero-proof-item"><strong>&lt;24h</strong><span>de respuesta</span></div>
-                        <div class="hero-proof-item"><strong>Diagnóstico</strong><span>claro y directo</span></div>
-                        <div class="hero-proof-item"><strong>WhatsApp</strong><span>como primer paso</span></div>
+                        <div class="hero-proof-item"><strong>&lt;24h</strong><span>de respuesta por WhatsApp</span></div>
+                        <div class="hero-proof-item"><strong>1:1</strong><span>directo con quien desarrolla</span></div>
+                        <div class="hero-proof-item"><strong>Sprints</strong><span>con avances visibles desde el inicio</span></div>
                     </div>
                     <a class="hero-scroll-cue" href="#servicios" aria-label="Ir a servicios">
                         <span>Explorar</span>
@@ -175,50 +204,81 @@
                     </a>
                 </div>
                 <aside class="hero-showcase" aria-label="Resumen de proyectos y disponibilidad">
-                    <article class="hero-showcase-main glass-card-hero" data-depth="0.08">
-                        <div class="showcase-topline">
-                            <span class="showcase-dot"></span>
-                            <span>Radar de ejecución</span>
-                        </div>
-                        <h3>Pulso del proyecto</h3>
-                        <div class="showcase-metric">
-                            <div class="metric-row">
-                                <span>Avance sprint</span>
-                                <strong>93%</strong>
+                    <div class="hero-node-row" aria-hidden="true">
+                        <div class="hero-node-col">
+                            <div class="hero-system-mini-node hero-system-mini-node--client">
+                                <span class="hero-system-mini-node__halo"></span>
+                                <span class="hero-system-mini-node__outer"></span>
+                                <span class="hero-system-mini-node__inner"></span>
                             </div>
-                            <div class="metric-bar"><span style="width:93%"></span></div>
+                            <span class="hero-system-mini-label">Problema</span>
                         </div>
-                        <div class="showcase-metric">
-                            <div class="metric-row">
-                                <span>SLA de respuesta</span>
-                                <strong>&lt;24h</strong>
+                        <div class="hero-node-connector hero-node-connector--a"></div>
+                        <div class="hero-node-col">
+                            <div class="hero-system-mini-node hero-system-mini-node--system">
+                                <span class="hero-system-mini-node__halo"></span>
+                                <span class="hero-system-mini-node__outer"></span>
+                                <span class="hero-system-mini-node__inner"></span>
                             </div>
-                            <div class="metric-bar"><span style="width:88%"></span></div>
+                            <span class="hero-system-mini-label">Solución</span>
                         </div>
-                        <p class="showcase-note">Entregas claras y foco en resultados para que cada avance impulse el negocio desde la primera versión.</p>
-                    </article>
-                    <article class="hero-project-card glass-card-hero" data-depth="0.14">
-                        <div class="project-card-head">
-                            <span class="project-pill">Caso destacado</span>
-                            <span class="project-live">En curso</span>
+                        <div class="hero-node-connector hero-node-connector--b"></div>
+                        <div class="hero-node-col">
+                            <div class="hero-system-mini-node hero-system-mini-node--result">
+                                <span class="hero-system-mini-node__halo"></span>
+                                <span class="hero-system-mini-node__outer"></span>
+                                <span class="hero-system-mini-node__inner"></span>
+                            </div>
+                            <span class="hero-system-mini-label">Resultado</span>
                         </div>
-                        <h4>Sentinl Commerce</h4>
-                        <p>Un sistema que anticipa quiebres de stock, ordena prioridades y activa alertas por WhatsApp para vender mejor y reaccionar más rápido.</p>
-                        <div class="project-tags">
-                            <span>Ventas</span><span>Control</span><span>Automatización</span>
+                    </div>
+
+                    <div class="hero-card-grid">
+                        <div class="hero-card-col">
+                            <div class="hero-card-line hero-card-line--problem"></div>
+                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(111,107,255,0.28)">
+                                <span class="hero-badge-icon hero-badge-icon--success"><i class="ph ph-check"></i></span>
+                                <div class="hero-badge-copy">
+                                    <strong>Tu negocio aparece en Google, pero no consigue ventas</strong>
+                                    <span>hay visibilidad, pero no se traduce en oportunidades reales</span>
+                                </div>
+                                <div class="hero-badge-card-footer">
+                                    <span style="font-size:10px;color:rgba(111,107,255,0.6);font-weight:600;letter-spacing:.3px">Problema</span>
+                                    <span class="hero-badge-pulse hero-badge-pulse--success"></span>
+                                </div>
+                            </article>
                         </div>
-                    </article>
-                    <article class="hero-mini-card glass-card-hero hero-mini-card--coffee" data-depth="0.2">
-                        <div class="hero-mini-coffee-icon" aria-hidden="true">
-                            <span class="coffee-steam coffee-steam--a"></span>
-                            <span class="coffee-steam coffee-steam--b"></span>
-                            <i class="ph ph-coffee"></i>
+
+                        <div class="hero-card-col">
+                            <div class="hero-card-line hero-card-line--solution"></div>
+                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(0,194,255,0.28)">
+                                <span class="hero-badge-icon hero-badge-icon--primary"><i class="ph ph-file-text"></i></span>
+                                <div class="hero-badge-copy">
+                                    <strong>Mejoramos visibilidad, mensaje y recorrido</strong>
+                                    <span>ordenamos la experiencia para que el usuario entienda y avance</span>
+                                </div>
+                                <div class="hero-badge-card-footer">
+                                    <span style="font-size:10px;color:rgba(0,194,255,0.6);font-weight:600;letter-spacing:.3px">Solución</span>
+                                    <span class="hero-badge-pulse hero-badge-pulse--primary"></span>
+                                </div>
+                            </article>
                         </div>
-                        <div>
-                            <strong>1000+ tazas de café</strong>
-                            <span>respuesta y ejecución constantes</span>
+
+                        <div class="hero-card-col">
+                            <div class="hero-card-line hero-card-line--result"></div>
+                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(255,122,24,0.28)">
+                                <span class="hero-badge-icon hero-badge-icon--accent"><i class="ph ph-clock-countdown"></i></span>
+                                <div class="hero-badge-copy">
+                                    <strong>Más visitas útiles, más consultas y más ventas</strong>
+                                    <span>una web que empuja mejor el contacto y la decisión</span>
+                                </div>
+                                <div class="hero-badge-card-footer">
+                                    <span style="font-size:10px;color:rgba(255,122,24,0.6);font-weight:600;letter-spacing:.3px">Resultado</span>
+                                    <span class="hero-badge-pulse hero-badge-pulse--accent"></span>
+                                </div>
+                            </article>
                         </div>
-                    </article>
+                    </div>
                 </aside>
             </div>
         </div>
@@ -269,27 +329,42 @@
         <div class="container">
             <div class="section-header">
                 <h2>Proyectos reales con foco en resultados</h2>
-                <p>Proyectos reales. Resultados reales.</p>
+                <p>Cada caso muestra el problema, la solución aplicada y el cambio que buscó generar en el negocio.</p>
             </div>
             <div class="portfolio-grid">
 
                 <!-- Sentinl Commerce, destacado -->
-                <article class="portfolio-card portfolio-card--featured">
+                <article class="portfolio-card portfolio-card--featured portfolio-card--featured-static">
                     <div class="portfolio-media">
-                        <img class="portfolio-image" src="/images/sentinl-commerce.webp" alt="Sentinl Commerce, dashboard de alertas B2B" loading="lazy">
+                        <img class="portfolio-image portfolio-image--sentinl" src="/images/sentinl-commerce.webp" alt="Sentinl Commerce, dashboard de alertas B2B" loading="lazy">
                         <div class="portfolio-state">Caso destacado · 2026</div>
                     </div>
                     <div class="portfolio-body">
                         <h3 style="font-size:26px;line-height:1.25;margin-bottom:14px">Sentinl Commerce, inteligencia predictiva B2B</h3>
                         <p>Permite anticipar faltantes, priorizar acciones y responder más rápido con alertas automáticas y visibilidad clara del negocio.</p>
                         <div class="portfolio-tags" style="margin-top:20px">
-                            <span>Ventas</span><span>Operación</span><span>Alertas</span><span>Control</span><span>Escala</span>
+                            <span>Menos quiebres</span><span>Alertas útiles</span><span>Decisiones rápidas</span><span>Control operativo</span><span>Escala</span>
                         </div>
+                        <div class="portfolio-feature-summary">
+                            <div class="portfolio-feature-summary__item">
+                                <span>Problema</span>
+                                <p>Seguimiento manual y reacción tardía.</p>
+                            </div>
+                            <div class="portfolio-feature-summary__item">
+                                <span>Solución</span>
+                                <p>Alertas claras y prioridades visibles.</p>
+                            </div>
+                            <div class="portfolio-feature-summary__item">
+                                <span>Impacto</span>
+                                <p>Más control con el mismo equipo.</p>
+                            </div>
+                        </div>
+                        <a href="#contacto" class="portfolio-feature-cta">Quiero un sistema así</a>
                     </div>
                 </article>
 
                 <!-- Academia -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="academia" tabindex="0" aria-label="Abrir detalle de Academia">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/academia.webp" alt="Academia, talento venezolano" loading="lazy">
                         <div class="portfolio-state">Academia · Scouting</div>
@@ -297,12 +372,14 @@
                     <div class="portfolio-body">
                         <h3>Academia, talento venezolano</h3>
                         <p>Una presencia digital clara para presentar talento con mayor confianza, mejor narrativa y una propuesta lista para compartir.</p>
-                        <div class="portfolio-tags"><span>Landing</span><span>Scouting</span><span>CMS</span></div>
+                        <p class="portfolio-note">Ideal para mostrar oferta, generar confianza rápida y compartir la propuesta sin depender de explicaciones manuales.</p>
+                        <div class="portfolio-tags"><span>Presentación clara</span><span>Mejor narrativa</span><span>Confianza inicial</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Sentinl Narrativa -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="sentinl-narrativa" tabindex="0" aria-label="Abrir detalle de Sentinl Narrativa">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/sentinl-narrativa.webp" alt="Sentinl Narrativa, brand scan en tiempo real" loading="lazy">
                         <div class="portfolio-state">Brand Scan · Live</div>
@@ -311,13 +388,14 @@
                         <h3>Sentinl Narrativa, brand scan en tiempo real</h3>
                         <p>Centraliza señales del mercado para detectar tendencias, entender contexto y actuar con información más útil.</p>
                         <div class="portfolio-tags">
-                            <span>IA aplicada</span><span>Streaming</span><span>Sentiment</span><span>UX dark</span>
+                            <span>Contexto en vivo</span><span>Lectura rápida</span><span>Señales útiles</span><span>Monitoreo continuo</span>
                         </div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Threat Intelligence -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="threat-intelligence" tabindex="0" aria-label="Abrir detalle de Threat Intelligence">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/threat-intelligence.webp" alt="Threat Intelligence, mapa de amenazas en vivo" loading="lazy">
                         <div class="portfolio-state">Mapa en vivo</div>
@@ -325,12 +403,13 @@
                     <div class="portfolio-body">
                         <h3>Threat Intelligence, mapa de amenazas en vivo</h3>
                         <p>Convierte grandes volúmenes de información en una lectura clara para monitorear, priorizar y decidir más rápido.</p>
-                        <div class="portfolio-tags"><span>Cybersecurity</span><span>Realtime</span><span>Data Viz</span></div>
+                        <div class="portfolio-tags"><span>Visibilidad en vivo</span><span>Priorización</span><span>Lectura clara</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Clínica Dental -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="clinica-dental" tabindex="0" aria-label="Abrir detalle de Clínica Dental">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/clinica-dental.webp" alt="Clínica Dental, landing de alta conversión" loading="lazy">
                         <div class="portfolio-state">Landing · Salud</div>
@@ -338,12 +417,14 @@
                     <div class="portfolio-body">
                         <h3>Clínica Dental, turnos y captación</h3>
                         <p>Una landing enfocada en generar consultas, ordenar la decisión del usuario y facilitar la reserva de turnos.</p>
-                        <div class="portfolio-tags"><span>SEO</span><span>CRO</span><span>Performance</span></div>
+                        <p class="portfolio-note">Pensada para que el paciente entienda rápido, confíe y llegue al contacto sin perderse en el camino.</p>
+                        <div class="portfolio-tags"><span>Más consultas</span><span>Turnos simples</span><span>SEO local</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Propi360 -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="propi360" tabindex="0" aria-label="Abrir detalle de Propi360">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/propi360.webp" alt="Propi360, panel multi-tenant con métricas" loading="lazy">
                         <div class="portfolio-state">Multi-tenant · Admin</div>
@@ -351,12 +432,13 @@
                     <div class="portfolio-body">
                         <h3>Propi360, panel multi-tenant</h3>
                         <p>Reúne métricas clave y tareas operativas en un solo lugar para dar visibilidad y mejorar la gestión diaria.</p>
-                        <div class="portfolio-tags"><span>Multi-tenant</span><span>RBAC</span><span>Dashboards</span></div>
+                        <div class="portfolio-tags"><span>Visibilidad total</span><span>Gestión diaria</span><span>Control centralizado</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Arcana Noir -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="arcana-noir" tabindex="0" aria-label="Abrir detalle de Arcana Noir">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/arcana-noir.webp" alt="Arcana Noir, landing premium de tarot" loading="lazy">
                         <div class="portfolio-state">Landing · Boutique</div>
@@ -364,12 +446,13 @@
                     <div class="portfolio-body">
                         <h3>Arcana Noir, tarot premium</h3>
                         <p>Una experiencia premium que transmite valor, diferencia la marca y convierte interés en conversaciones.</p>
-                        <div class="portfolio-tags"><span>Branding</span><span>UI</span><span>CRO</span></div>
+                        <div class="portfolio-tags"><span>Marca premium</span><span>Más confianza</span><span>Conversaciones directas</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- Elite Voyages -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="elite-voyages" tabindex="0" aria-label="Abrir detalle de Elite Voyages">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/elite-voyages.webp" alt="Elite Voyages, landing de agencia de viajes" loading="lazy">
                         <div class="portfolio-state">Landing · Travel</div>
@@ -377,12 +460,13 @@
                     <div class="portfolio-body">
                         <h3>Elite Voyages, agencia boutique</h3>
                         <p>Una propuesta premium orientada a captar leads de mayor intención con un recorrido claro y confiable.</p>
-                        <div class="portfolio-tags"><span>UX</span><span>Copy</span><span>Conversion</span></div>
+                        <div class="portfolio-tags"><span>Leads premium</span><span>Recorrido claro</span><span>Confianza rápida</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
 
                 <!-- NeuroBalance -->
-                <article class="portfolio-card">
+                <article class="portfolio-card" data-project="neuro-balance" tabindex="0" aria-label="Abrir detalle de NeuroBalance">
                     <div class="portfolio-media">
                         <img class="portfolio-image" src="/images/neuro_balance.webp" alt="NeuroBalance, landing de bienestar mental" loading="lazy">
                         <div class="portfolio-state">Landing · Wellness</div>
@@ -390,43 +474,74 @@
                     <div class="portfolio-body">
                         <h3>NeuroBalance, tomos de bienestar mental</h3>
                         <p>Una landing pensada para vender guías digitales con narrativa clara, confianza y CTA directo a WhatsApp.</p>
-                        <div class="portfolio-tags"><span>Landing</span><span>Copy</span><span>CRO</span></div>
+                        <div class="portfolio-tags"><span>Venta digital</span><span>CTA directo</span><span>Narrativa clara</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
+    <div class="portfolio-modal" id="portfolioModal" aria-hidden="true">
+        <div class="portfolio-modal__backdrop" data-modal-close></div>
+        <div class="portfolio-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="portfolioModalTitle">
+            <button type="button" class="portfolio-modal__close" data-modal-close aria-label="Cerrar detalle del proyecto">
+                <i class="ph ph-x"></i>
+            </button>
+            <div class="portfolio-modal__topline" id="portfolioModalState"></div>
+            <h3 id="portfolioModalTitle"></h3>
+            <p class="portfolio-modal__summary" id="portfolioModalSummary"></p>
+            <div class="portfolio-modal__grid">
+                <div>
+                    <span class="portfolio-modal__label">Problema</span>
+                    <p id="portfolioModalProblem"></p>
+                </div>
+                <div>
+                    <span class="portfolio-modal__label">Solución</span>
+                    <p id="portfolioModalSolution"></p>
+                </div>
+                <div>
+                    <span class="portfolio-modal__label">Resultado</span>
+                    <p id="portfolioModalResult"></p>
+                </div>
+            </div>
+            <div class="portfolio-modal__actions">
+                <a id="portfolioModalLink" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" hidden>Visitar proyecto</a>
+                <a href="#contacto" class="btn btn-primary" data-modal-close>Quiero algo así</a>
+            </div>
+        </div>
+    </div>
+
     <!-- ===================== PROCESO ===================== -->
     <section class="section process-section" id="proceso">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Esto es lo que cambia</div>
-                <h2>¿Qué cambia cuando trabaja con nosotros?</h2>
-                <p>El impacto se ve en captación, ventas, organización y capacidad para decidir mejor.</p>
-            </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Más leads cualificados</h3>
-                    <p>Su propuesta se entiende mejor y el contacto llega con más intención de compra.</p>
+                <div class="section-header">
+                    <div class="section-tag">Esto es lo que cambia</div>
+                    <h2>¿Qué cambia cuando trabaja con nosotros?</h2>
+                    <p>El impacto se ve en captación, ventas, organización y capacidad para decidir mejor, con ejemplos concretos del tipo de trabajo que hacemos.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Más ventas sin aumentar esfuerzo</h3>
-                    <p>La web y los procesos trabajan a favor del negocio para convertir mejor con el mismo equipo.</p>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3>Más leads cualificados</h3>
+                        <p>Su propuesta se entiende mejor desde el primer scroll, y el contacto llega con más intención de compra en lugar de solo preguntar precio.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3>Más ventas sin aumentar esfuerzo</h3>
+                        <p>La web y los procesos trabajan a favor del negocio para convertir mejor con el mismo equipo, como en casos orientados a reservas y captación.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3>Procesos más rápidos y organizados</h3>
+                        <p>Menos tareas repetitivas, menos errores y más tiempo para enfocarse en crecer, con alertas y automatizaciones que reducen trabajo manual.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3>Información clara para tomar decisiones</h3>
+                        <p>Mayor visibilidad del negocio para actuar con criterio y no por intuición, centralizando métricas y prioridades en un solo lugar.</p>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Procesos más rápidos y organizados</h3>
-                    <p>Menos tareas repetitivas, menos errores y más tiempo para enfocarse en crecer.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Información clara para tomar decisiones</h3>
-                    <p>Mayor visibilidad del negocio para actuar con criterio y no por intuición.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -436,9 +551,9 @@
             <div class="about-content">
                 <div class="about-text">
                     <div class="section-tag">Enfoque</div>
-                    <h2>Soluciones que generan resultados</h2>
-                    <p>Soy José Vargas y trabajo con negocios que necesitan vender mejor, ordenar su operación y avanzar con una presencia digital más sólida.</p>
-                    <p>Mi enfoque combina criterio de negocio, ejecución cuidada y sistemas que optimizan el trabajo diario sin sumar complejidad innecesaria.</p>
+                    <h2>Trabajo directo para negocios que necesitan claridad y resultados</h2>
+                    <p>Soy José Vargas, desarrollador en Buenos Aires, y trabajo con negocios que necesitan vender mejor, ordenar su operación y avanzar con una presencia digital más sólida.</p>
+                    <p>Mi enfoque combina criterio de negocio, ejecución cuidada y un proceso claro para que cada entrega tenga sentido comercial antes de sumar complejidad técnica.</p>
                     <div class="about-features">
                         <div class="about-feature">
                             <span class="feature-icon"><i class="ph ph-check"></i></span>
@@ -506,9 +621,9 @@
                             <div class="status-bar"><b style="width:100%"></b></div>
                         </div>
                         <div class="about-micro-metrics" data-depth="0.09">
-                            <div><strong>98%</strong><span>satisfacción cliente</span></div>
-                            <div><strong>QA+</strong><span>validación técnica real</span></div>
-                            <div><strong>1:1</strong><span>seguimiento directo</span></div>
+                            <div><strong>&lt;24h</strong><span>respuesta en días hábiles</span></div>
+                            <div><strong>QA+</strong><span>validación técnica antes de publicar</span></div>
+                            <div><strong>1:1</strong><span>seguimiento directo durante el proyecto</span></div>
                         </div>
                     </div>
                 </div>
@@ -558,23 +673,21 @@
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h2>El siguiente paso es optimizar su negocio.</h2>
-                    <p>Le mostramos exactamente qué mejorar y cómo hacerlo.</p>
+                    <h2>Contame qué querés mejorar y te digo por dónde empezar.</h2>
+                    <p>Revisamos tu caso, detectamos oportunidades concretas y definimos el primer paso con criterio de negocio.</p>
                     <div class="contact-methods">
                         <div class="contact-method">
                             <span class="method-icon"><i class="ph ph-envelope-simple"></i></span>
                             <div>
                                 <div class="method-label">Email</div>
-                                <!-- Email ofuscado, JS lo arma dinámicamente y no se ve en texto plano -->
-                                <a href="#" class="js-obf-email" data-u="kvlabstudio" data-d="gmail" data-t="com">Email</a>
+                                <a href="mailto:kvlabstudio@gmail.com" class="js-obf-email" data-u="kvlabstudio" data-d="gmail" data-t="com">kvlabstudio@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-method">
                             <span class="method-icon"><i class="ph ph-whatsapp-logo"></i></span>
                             <div>
                                 <div class="method-label">WhatsApp</div>
-                                <!-- WhatsApp ofuscado, JS lo arma dinámicamente -->
-                                <a href="#" class="js-obf-wa" data-n="5491122773720">+54 9 11 2277-3720</a>
+                                <a href="https://wa.me/5491122773720" class="js-obf-wa" data-n="5491122773720">Abrir chat directo</a>
                             </div>
                         </div>
                         <div class="contact-method">
@@ -582,6 +695,13 @@
                             <div>
                                 <div class="method-label">Tiempo de respuesta</div>
                                 <span>Menos de 24 horas hábiles</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-icon"><i class="ph ph-map-pin"></i></span>
+                            <div>
+                                <div class="method-label">Base</div>
+                                <span>Buenos Aires, Argentina</span>
                             </div>
                         </div>
                     </div>
@@ -609,6 +729,7 @@
                             <span>&rarr;</span>
                         </button>
                         <p class="form-note">Respuesta en menos de 24h</p>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
                     </form>
                 </div>
             </div>
@@ -616,7 +737,7 @@
     </section>
 
     <!-- WhatsApp Floating Button, ofuscado -->
-    <a href="#" class="whatsapp-float js-obf-wa-float" data-n="5491122773720" data-m="Hola%2C%20quiero%20mejorar%20mi%20negocio%20con%20una%20soluci%C3%B3n%20digital" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/5491122773720?text=Hola%2C%20quiero%20mejorar%20mi%20negocio%20con%20una%20soluci%C3%B3n%20digital" class="whatsapp-float js-obf-wa-float" data-n="5491122773720" data-m="Hola%2C%20quiero%20mejorar%20mi%20negocio%20con%20una%20soluci%C3%B3n%20digital" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </a>
 
@@ -624,20 +745,20 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a class="brand-lockup brand-lockup--footer" href="#main-content" aria-label="Ir al inicio de KvLabStudio">
+                    <a class="brand-lockup brand-lockup--footer" href="#main-content" aria-label="Ir al inicio de KvLab Studio">
                         <img class="brand-mark" src="/images/kvlab-mark.svg" alt="" aria-hidden="true" width="34" height="34">
-                        <h3>&lt;KvLabStudio/&gt;</h3>
+                        <h3>KvLab Studio</h3>
                     </a>
                     <p>Soluciones digitales para negocios que buscan más ventas, más claridad y menos trabajo manual.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#servicios">Landing Pages</a></li>
-                        <li><a href="#servicios">Sitios web profesionales</a></li>
-                        <li><a href="#servicios">Dashboards y sistemas</a></li>
-                        <li><a href="#servicios">Automatización</a></li>
-                        <li><a href="#servicios">Optimización digital</a></li>
+                        <li><a href="servicios.html#landing-pages">Landing Pages</a></li>
+                        <li><a href="servicios.html#sitios-web">Sitios web profesionales</a></li>
+                        <li><a href="servicios.html#sistemas">Dashboards y sistemas</a></li>
+                        <li><a href="servicios.html#automatizacion">Automatización</a></li>
+                        <li><a href="servicios.html#optimizacion">Optimización digital</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -645,30 +766,31 @@
                     <ul>
                         <li><a href="#sobre">Sobre mí</a></li>
                         <li><a href="#portfolio">Proyectos</a></li>
+                        <li><a href="recursos.html">Recursos</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Contacto</h4>
                     <ul>
-                        <li><a href="#" class="js-obf-email" data-u="kvlabstudio" data-d="gmail" data-t="com">Email</a></li>
-                        <li><a href="#" class="js-obf-wa" data-n="5491122773720">+54 9 11 2277-3720</a></li>
+                        <li><a href="mailto:kvlabstudio@gmail.com" class="js-obf-email" data-u="kvlabstudio" data-d="gmail" data-t="com">kvlabstudio@gmail.com</a></li>
+                        <li><a href="https://wa.me/5491122773720" class="js-obf-wa" data-n="5491122773720">+54 9 11 2277-3720</a></li>
                     </ul>
-                    <div class="footer-social" aria-label="Redes sociales de KvLabStudio">
-                        <a href="https://github.com/jrvmdev" class="social-link social-link--github" aria-label="GitHub de KvLabStudio" title="GitHub" target="_blank" rel="noopener noreferrer">
+                    <div class="footer-social" aria-label="Redes sociales de KvLab Studio">
+                        <a href="https://github.com/jrvmdev" class="social-link social-link--github" aria-label="GitHub de KvLab Studio" title="GitHub" target="_blank" rel="noopener noreferrer">
                             <i class="ph ph-github-logo" aria-hidden="true"></i>
                         </a>
-                        <a href="https://x.com/KvLabStudio" class="social-link social-link--x" aria-label="X de KvLabStudio" title="X" target="_blank" rel="noopener noreferrer">
+                        <a href="https://x.com/KvLabStudio" class="social-link social-link--x" aria-label="X de KvLab Studio" title="X" target="_blank" rel="noopener noreferrer">
                             <i class="ph ph-x-logo" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/kvlabstudio?igsh=MWRjOTg5NmF0cHhxaw==" class="social-link social-link--instagram" aria-label="Instagram de KvLabStudio" title="Instagram" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/kvlabstudio?igsh=MWRjOTg5NmF0cHhxaw==" class="social-link social-link--instagram" aria-label="Instagram de KvLab Studio" title="Instagram" target="_blank" rel="noopener noreferrer">
                             <i class="ph ph-instagram-logo" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 &lt;KvLabStudio/&gt;. Todos los derechos reservados.</p>
+                <p>&copy; 2026 KvLab Studio. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

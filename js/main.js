@@ -7,6 +7,127 @@ const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
 const heroShowcase = document.querySelector('.hero-showcase');
 const aboutScene = document.querySelector('.about-placeholder');
 const heroSection = document.querySelector('.hero');
+const portfolioModal = document.getElementById('portfolioModal');
+const portfolioCards = document.querySelectorAll('.portfolio-card[data-project]');
+const portfolioData = {
+  'sentinl-commerce': {
+    state: 'Caso destacado · 2026',
+    title: 'Sentinl Commerce, inteligencia predictiva B2B',
+    summary:
+      'Sistema enfocado en anticipar quiebres, ordenar prioridades y activar respuestas más rápidas para cuidar ventas y operación.',
+    problem:
+      'El equipo necesitaba detectar faltantes y reaccionar a tiempo sin depender de seguimiento manual constante.',
+    solution:
+      'Se diseñó una vista operativa con alertas claras, priorización de acciones y lectura rápida del estado del negocio.',
+    result:
+      'Más control diario, menos reacción tardía y decisiones comerciales con mejor contexto.',
+    link: '',
+  },
+  academia: {
+    state: 'Academia · Scouting',
+    title: 'Academia, talento venezolano',
+    summary:
+      'Presencia digital pensada para ordenar la oferta, explicar mejor el valor y facilitar el primer contacto con una propuesta lista para compartir.',
+    problem:
+      'La propuesta necesitaba orden visual y narrativa para mostrar talento con más seriedad, generar confianza y evitar depender de explicaciones manuales en cada contacto.',
+    solution:
+      'Se construyó una landing con mensaje más claro, mejor jerarquía de contenidos y una estructura pensada para presentar el servicio de forma profesional.',
+    result:
+      'La propuesta gana claridad, transmite más confianza desde el primer vistazo y queda mejor preparada para abrir conversaciones comerciales.',
+    link: '',
+  },
+  'sentinl-narrativa': {
+    state: 'Brand Scan · Live',
+    title: 'Sentinl Narrativa, brand scan en tiempo real',
+    summary:
+      'Interfaz pensada para leer señales del mercado y detectar contexto útil sin perder velocidad.',
+    problem:
+      'Había mucha información dispersa y poca capacidad de lectura rápida para identificar tendencias o cambios relevantes.',
+    solution:
+      'Se diseñó una experiencia que centraliza señales, resalta lo importante y facilita el monitoreo continuo.',
+    result:
+      'Menos ruido, mejor lectura del contexto y una base más útil para actuar a tiempo.',
+    link: '',
+  },
+  'threat-intelligence': {
+    state: 'Mapa en vivo',
+    title: 'Threat Intelligence, mapa de amenazas en vivo',
+    summary:
+      'Visualización enfocada en monitoreo y priorización para pasar de datos complejos a decisiones más claras.',
+    problem:
+      'Los datos eran difíciles de leer en conjunto y eso complicaba priorizar incidentes o señales relevantes.',
+    solution:
+      'Se creó una capa visual en vivo que simplifica la lectura y organiza mejor la información crítica.',
+    result:
+      'Mayor visibilidad operativa y una respuesta más ordenada frente a escenarios cambiantes.',
+    link: '',
+  },
+  'clinica-dental': {
+    state: 'Landing · Salud',
+    title: 'Clínica Dental, turnos y captación',
+    summary:
+      'Landing orientada a captar consultas con recorrido simple, CTA directo y foco en confianza para pacientes que necesitan decidir rápido.',
+    problem:
+      'La clínica necesitaba transformar interés en consultas reales sin depender solo del teléfono ni de recorridos confusos que enfrían la intención del paciente.',
+    solution:
+      'Se planteó una landing de alta conversión con CTA a WhatsApp, contenido claro, señales de confianza y un flujo de contacto más simple.',
+    result:
+      'Más facilidad para consultar, menos fricción para reservar y una presencia mejor preparada para captar búsquedas locales con intención real.',
+    link: '',
+  },
+  propi360: {
+    state: 'Multi-tenant · Admin',
+    title: 'Propi360, panel multi-tenant',
+    summary:
+      'Dashboard para centralizar métricas y tareas operativas en un solo entorno de trabajo.',
+    problem:
+      'La operación necesitaba más visibilidad para seguir métricas, controlar accesos y ordenar la gestión diaria.',
+    solution:
+      'Se armó un panel con información centralizada, estructura administrativa y foco en lectura rápida.',
+    result:
+      'Más control sobre la operación y mejores condiciones para decidir sin depender de planillas dispersas.',
+    link: '',
+  },
+  'arcana-noir': {
+    state: 'Landing · Boutique',
+    title: 'Arcana Noir, tarot premium',
+    summary:
+      'Landing premium construida para reforzar percepción de valor y convertir interés en conversaciones.',
+    problem:
+      'La marca necesitaba diferenciarse y transmitir una experiencia más cuidada para justificar mejor su propuesta.',
+    solution:
+      'Se trabajó una interfaz con identidad fuerte, narrativa clara y CTA directo a conversación.',
+    result:
+      'La oferta se percibe con más valor, más personalidad y mayor confianza para dar el siguiente paso.',
+    link: '',
+  },
+  'elite-voyages': {
+    state: 'Landing · Travel',
+    title: 'Elite Voyages, agencia boutique',
+    summary:
+      'Propuesta digital orientada a captar leads de mayor intención en una categoría donde la confianza pesa mucho.',
+    problem:
+      'El negocio necesitaba comunicar experiencia premium y reducir dudas rápido para convertir interés en contacto.',
+    solution:
+      'Se definió una landing con recorrido claro, mejor jerarquía de información y señales visuales de confianza.',
+    result:
+      'Más claridad comercial y una experiencia más alineada con clientes que comparan valor antes de escribir.',
+    link: '',
+  },
+  'neuro-balance': {
+    state: 'Landing · Wellness',
+    title: 'NeuroBalance, bienestar mental',
+    summary:
+      'Landing pensada para vender productos digitales con narrativa simple y CTA directo.',
+    problem:
+      'La propuesta necesitaba explicar mejor el valor de las guías y facilitar el paso a la conversación o compra.',
+    solution:
+      'Se diseñó una estructura de venta con copy más claro, recorrido liviano y foco en conversión.',
+    result:
+      'La oferta queda mejor explicada y el usuario encuentra más rápido el siguiente paso para avanzar.',
+    link: '',
+  },
+};
 
 const initHeroCinematicBackground = () => {
   if (!heroSection || prefersReducedMotion) return;
@@ -219,7 +340,7 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot, .portfolio-card, .hero-showcase-main, .hero-project-card, .hero-mini-card')
+  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot, .portfolio-card, .hero-badge-card')
   .forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -277,6 +398,15 @@ const buildWhatsappUrl = (rawNumber, message) => {
   return `${base}?text=${encodeURIComponent(message)}`;
 };
 
+const trackConversion = (eventName, eventLabel) => {
+  if (typeof window.gtag !== 'function') return;
+
+  window.gtag('event', eventName, {
+    event_category: 'conversion',
+    event_label: eventLabel,
+  });
+};
+
 document.querySelectorAll('.js-obf-wa, .js-obf-wa-float').forEach((el) => {
   const rawNumber = el.getAttribute('data-n');
   const rawMessage = el.getAttribute('data-m');
@@ -290,6 +420,14 @@ document.querySelectorAll('.js-obf-wa, .js-obf-wa-float').forEach((el) => {
   el.setAttribute('aria-label', 'Contactar por WhatsApp');
 });
 
+document.querySelectorAll('a[href*="wa.me"]').forEach((el) => {
+  el.addEventListener('click', () => trackConversion('whatsapp_click', el.textContent.trim() || 'WhatsApp CTA'));
+});
+
+document.querySelectorAll('a[href^="mailto:"]').forEach((el) => {
+  el.addEventListener('click', () => trackConversion('email_click', el.textContent.trim() || 'Email CTA'));
+});
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
@@ -299,6 +437,7 @@ if (contactForm) {
     const email = document.getElementById('email')?.value?.trim() || '';
     const phone = document.getElementById('phone')?.value?.trim() || 'No especificado';
     const project = document.getElementById('project')?.value?.trim() || '';
+    const formStatus = document.getElementById('formStatus');
 
     const message = [
       'Hola, quiero mejorar mi negocio con una solución digital.',
@@ -313,8 +452,88 @@ if (contactForm) {
     const waUrl = buildWhatsappUrl(obfNumber || fallbackNumber, message);
     if (waUrl) {
       window.open(waUrl, '_blank', 'noopener,noreferrer');
+      trackConversion('form_submit_whatsapp', 'Formulario de contacto');
     }
 
     contactForm.reset();
+    if (formStatus) {
+      formStatus.hidden = false;
+      formStatus.textContent = 'Listo. Se abrio WhatsApp con tu consulta preparada.';
+    }
+  });
+}
+
+if (portfolioModal && portfolioCards.length > 0) {
+  const modalTitle = document.getElementById('portfolioModalTitle');
+  const modalState = document.getElementById('portfolioModalState');
+  const modalSummary = document.getElementById('portfolioModalSummary');
+  const modalProblem = document.getElementById('portfolioModalProblem');
+  const modalSolution = document.getElementById('portfolioModalSolution');
+  const modalResult = document.getElementById('portfolioModalResult');
+  const modalLink = document.getElementById('portfolioModalLink');
+  let lastFocusedCard = null;
+
+  const closeModal = () => {
+    portfolioModal.classList.remove('is-open');
+    portfolioModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    if (lastFocusedCard) {
+      lastFocusedCard.focus();
+    }
+  };
+
+  const openModal = (projectId, sourceCard) => {
+    const project = portfolioData[projectId];
+    if (!project) return;
+
+    lastFocusedCard = sourceCard || null;
+    modalState.textContent = project.state;
+    modalTitle.textContent = project.title;
+    modalSummary.textContent = project.summary;
+    modalProblem.textContent = project.problem;
+    modalSolution.textContent = project.solution;
+    modalResult.textContent = project.result;
+
+    if (project.link) {
+      modalLink.hidden = false;
+      modalLink.href = project.link;
+    } else {
+      modalLink.hidden = true;
+      modalLink.removeAttribute('href');
+    }
+
+    portfolioModal.classList.add('is-open');
+    portfolioModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    portfolioModal.querySelector('.portfolio-modal__close')?.focus();
+  };
+
+  portfolioCards.forEach((card) => {
+    const projectId = card.getAttribute('data-project');
+    const trigger = card.querySelector('.portfolio-trigger');
+    if (trigger) {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        openModal(projectId, card);
+      });
+    }
+
+    card.addEventListener('click', () => openModal(projectId, card));
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      openModal(projectId, card);
+    });
+  });
+
+  portfolioModal.querySelectorAll('[data-modal-close]').forEach((el) => {
+    el.addEventListener('click', () => closeModal());
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && portfolioModal.classList.contains('is-open')) {
+      closeModal();
+    }
   });
 }
