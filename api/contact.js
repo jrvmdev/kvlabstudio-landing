@@ -1,3 +1,5 @@
+const https = require('https');
+
 const BREVO_API_URL = 'https://api.brevo.com/v3/smtp/email';
 const DEFAULT_TO_EMAIL = 'hola@kvlabstudio.com';
 const DEFAULT_FROM_EMAIL = 'hola@kvlabstudio.com';
@@ -23,6 +25,41 @@ const escapeHtml = (value) =>
     .replace(/'/g, '&#039;');
 
 const isEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+const sendBrevoEmail = (apiKey, payload) =>
+  new Promise((resolve, reject) => {
+    const body = JSON.stringify(payload);
+    const req = https.request(
+      BREVO_API_URL,
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'api-key': apiKey,
+          'content-type': 'application/json',
+          'content-length': Buffer.byteLength(body),
+        },
+      },
+      (brevoRes) => {
+        let data = '';
+        brevoRes.setEncoding('utf8');
+        brevoRes.on('data', (chunk) => {
+          data += chunk;
+        });
+        brevoRes.on('end', () => {
+          resolve({
+            ok: brevoRes.statusCode >= 200 && brevoRes.statusCode < 300,
+            status: brevoRes.statusCode,
+            body: data,
+          });
+        });
+      }
+    );
+
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
 
 module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') {
@@ -92,26 +129,17 @@ module.exports = async (req, res) => {
       `<p>${safeProjectHtml}</p>`,
     ].join('');
 
-    const brevoResponse = await fetch(BREVO_API_URL, {
-      method: 'POST',
-      headers: {
-        accept: 'application/json',
-        'api-key': apiKey,
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        sender: { name: 'KvLab Studio Web', email: fromEmail },
-        to: [{ email: toEmail }],
-        replyTo: { name, email },
-        subject,
-        textContent,
-        htmlContent,
-      }),
+    const brevoResponse = await sendBrevoEmail(apiKey, {
+      sender: { name: 'KvLab Studio Web', email: fromEmail },
+      to: [{ email: toEmail }],
+      replyTo: { name, email },
+      subject,
+      textContent,
+      htmlContent,
     });
 
     if (!brevoResponse.ok) {
-      const errorBody = await brevoResponse.text();
-      console.error('Brevo error:', brevoResponse.status, errorBody);
+      console.error('Brevo error:', brevoResponse.status, brevoResponse.body);
       json(res, 502, {
         ok: false,
         message: 'No se pudo enviar la consulta. Probalo de nuevo en unos minutos.',
