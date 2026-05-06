@@ -2993,6 +2993,13 @@ footer {
     box-shadow: 0 34px 70px -46px rgba(0, 194, 255, 0.64);
 }
 
+.contact-info,
+.contact-form-container,
+.contact-method,
+.contact-method > div {
+    min-width: 0;
+}
+
 .contact-info h2 {
     font-size: clamp(28px, 4vw, 40px);
     margin-bottom: 20px;
@@ -3057,6 +3064,7 @@ footer {
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s ease;
+    overflow-wrap: anywhere;
 }
 
 .contact-method a:hover {
@@ -3220,9 +3228,13 @@ footer {
     }
 
     .about-content,
-    .contact-wrapper,
     .contact-wrapper {
         padding: 22px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
     }
     
     .about-placeholder { min-height: 400px; }
