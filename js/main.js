@@ -430,35 +430,58 @@ document.querySelectorAll('a[href^="mailto:"]').forEach((el) => {
 
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = document.getElementById('name')?.value?.trim() || '';
     const email = document.getElementById('email')?.value?.trim() || '';
-    const phone = document.getElementById('phone')?.value?.trim() || 'No especificado';
+    const phone = document.getElementById('phone')?.value?.trim() || '';
     const project = document.getElementById('project')?.value?.trim() || '';
+    const website = document.getElementById('website')?.value?.trim() || '';
     const formStatus = document.getElementById('formStatus');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.innerHTML : '';
 
-    const message = [
-      'Hola, quiero mejorar mi negocio con una solución digital.',
-      `Nombre: ${name}`,
-      `Email: ${email}`,
-      `Telefono: ${phone}`,
-      `Proyecto: ${project}`,
-    ].join('\n');
-
-    const fallbackNumber = '5491122773720';
-    const obfNumber = document.querySelector('.js-obf-wa')?.getAttribute('data-n');
-    const waUrl = buildWhatsappUrl(obfNumber || fallbackNumber, message);
-    if (waUrl) {
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
-      trackConversion('form_submit_whatsapp', 'Formulario de contacto');
-    }
-
-    contactForm.reset();
     if (formStatus) {
       formStatus.hidden = false;
-      formStatus.textContent = 'Listo. Se abrio WhatsApp con tu consulta preparada.';
+      formStatus.classList.remove('is-error');
+      formStatus.textContent = 'Enviando consulta...';
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = 'Enviando... <span>&rarr;</span>';
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, project, website }),
+      });
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.ok === false) {
+        throw new Error(result.message || 'No se pudo enviar la consulta.');
+      }
+
+      contactForm.reset();
+      trackConversion('form_submit_email', 'Formulario de contacto');
+      if (formStatus) {
+        formStatus.classList.remove('is-error');
+        formStatus.textContent = 'Listo. Tu consulta fue enviada correctamente.';
+      }
+    } catch (error) {
+      if (formStatus) {
+        formStatus.classList.add('is-error');
+        formStatus.textContent =
+          error.message || 'No se pudo enviar la consulta. Probalo de nuevo en unos minutos.';
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
+      }
     }
   });
 }
