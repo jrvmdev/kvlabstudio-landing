@@ -923,6 +923,18 @@ nav.nav-scrolled {
     position: relative;
 }
 
+.hero-badge-card--problem {
+    border-color: rgba(111, 107, 255, 0.28);
+}
+
+.hero-badge-card--solution {
+    border-color: rgba(0, 194, 255, 0.28);
+}
+
+.hero-badge-card--result {
+    border-color: rgba(255, 122, 24, 0.28);
+}
+
 .hero-badge-card::before {
     content: "";
     position: absolute;
@@ -951,6 +963,24 @@ nav.nav-scrolled {
     justify-content: space-between;
     width: 100%;
     margin-top: 2px;
+}
+
+.hero-badge-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.hero-badge-label--problem {
+    color: rgba(111, 107, 255, 0.6);
+}
+
+.hero-badge-label--solution {
+    color: rgba(0, 194, 255, 0.6);
+}
+
+.hero-badge-label--result {
+    color: rgba(255, 122, 24, 0.6);
 }
 
 .hero-badge-icon i {
@@ -1706,10 +1736,20 @@ nav.nav-scrolled {
     line-height: 1.65;
 }
 
+.portfolio-feature-title {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+}
+
 .portfolio-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+.portfolio-tags--featured {
+    margin-top: 20px;
 }
 
 .portfolio-tags span {
@@ -2685,6 +2725,14 @@ footer {
     height: 100%;
     border-radius: inherit;
     background: linear-gradient(90deg, rgba(0, 194, 255, 0.88), rgba(255, 122, 24, 0.8));
+}
+
+.status-bar__fill--delivery {
+    width: 92%;
+}
+
+.status-bar__fill--qa {
+    width: 100%;
 }
 
 .about-micro-metrics {

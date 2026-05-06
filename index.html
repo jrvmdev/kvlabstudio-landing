@@ -42,29 +42,7 @@
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ME85J1FH9J"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-ME85J1FH9J');
-    </script>
-
-    <script>
-      document.addEventListener('error', function (event) {
-        var el = event.target;
-        if (!el || el.tagName !== 'IMG' || el.dataset.assetFallbackTried === 'true') return;
-
-        var src = el.getAttribute('src') || '';
-        if (src.indexOf('/images/') === 0) {
-          el.dataset.assetFallbackTried = 'true';
-          el.src = src.slice(1);
-        } else if (src.indexOf('images/') === 0 && window.location.protocol !== 'file:') {
-          el.dataset.assetFallbackTried = 'true';
-          el.src = '/' + src;
-        }
-      }, true);
-    </script>
+    <script src="js/head.js"></script>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -240,14 +218,14 @@
                     <div class="hero-card-grid">
                         <div class="hero-card-col">
                             <div class="hero-card-line hero-card-line--problem"></div>
-                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(111,107,255,0.28)">
+                            <article class="hero-badge-card hero-badge-card--problem glass-card-hero">
                                 <span class="hero-badge-icon hero-badge-icon--success"><i class="ph ph-check"></i></span>
                                 <div class="hero-badge-copy">
                                     <strong>Tu negocio aparece en Google, pero no consigue ventas</strong>
                                     <span>hay visibilidad, pero no se traduce en oportunidades reales</span>
                                 </div>
                                 <div class="hero-badge-card-footer">
-                                    <span style="font-size:10px;color:rgba(111,107,255,0.6);font-weight:600;letter-spacing:.3px">Problema</span>
+                                    <span class="hero-badge-label hero-badge-label--problem">Problema</span>
                                     <span class="hero-badge-pulse hero-badge-pulse--success"></span>
                                 </div>
                             </article>
@@ -255,14 +233,14 @@
 
                         <div class="hero-card-col">
                             <div class="hero-card-line hero-card-line--solution"></div>
-                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(0,194,255,0.28)">
+                            <article class="hero-badge-card hero-badge-card--solution glass-card-hero">
                                 <span class="hero-badge-icon hero-badge-icon--primary"><i class="ph ph-file-text"></i></span>
                                 <div class="hero-badge-copy">
                                     <strong>Mejoramos visibilidad, mensaje y recorrido</strong>
                                     <span>ordenamos la experiencia para que el usuario entienda y avance</span>
                                 </div>
                                 <div class="hero-badge-card-footer">
-                                    <span style="font-size:10px;color:rgba(0,194,255,0.6);font-weight:600;letter-spacing:.3px">Solución</span>
+                                    <span class="hero-badge-label hero-badge-label--solution">Solución</span>
                                     <span class="hero-badge-pulse hero-badge-pulse--primary"></span>
                                 </div>
                             </article>
@@ -270,14 +248,14 @@
 
                         <div class="hero-card-col">
                             <div class="hero-card-line hero-card-line--result"></div>
-                            <article class="hero-badge-card glass-card-hero" style="border-color: rgba(255,122,24,0.28)">
+                            <article class="hero-badge-card hero-badge-card--result glass-card-hero">
                                 <span class="hero-badge-icon hero-badge-icon--accent"><i class="ph ph-clock-countdown"></i></span>
                                 <div class="hero-badge-copy">
                                     <strong>Más visitas útiles, más consultas y más ventas</strong>
                                     <span>una web que empuja mejor el contacto y la decisión</span>
                                 </div>
                                 <div class="hero-badge-card-footer">
-                                    <span style="font-size:10px;color:rgba(255,122,24,0.6);font-weight:600;letter-spacing:.3px">Resultado</span>
+                                    <span class="hero-badge-label hero-badge-label--result">Resultado</span>
                                     <span class="hero-badge-pulse hero-badge-pulse--accent"></span>
                                 </div>
                             </article>
@@ -358,9 +336,9 @@
                         <div class="portfolio-state">Caso destacado · 2026</div>
                     </div>
                     <div class="portfolio-body">
-                        <h3 style="font-size:26px;line-height:1.25;margin-bottom:14px">Sentinl Commerce, inteligencia predictiva B2B</h3>
+                        <h3 class="portfolio-feature-title">Sentinl Commerce, inteligencia predictiva B2B</h3>
                         <p>Permite anticipar faltantes, priorizar acciones y responder más rápido con alertas automáticas y visibilidad clara del negocio.</p>
-                        <div class="portfolio-tags" style="margin-top:20px">
+                        <div class="portfolio-tags portfolio-tags--featured">
                             <span>Menos quiebres</span><span>Alertas útiles</span><span>Decisiones rápidas</span><span>Control operativo</span><span>Escala</span>
                         </div>
                         <div class="portfolio-feature-summary">
@@ -631,12 +609,12 @@
                         <div class="about-status about-status--left" data-depth="0.12">
                             <span>Velocidad de entrega</span>
                             <strong>92%</strong>
-                            <div class="status-bar"><b style="width:92%"></b></div>
+                            <div class="status-bar"><b class="status-bar__fill status-bar__fill--delivery"></b></div>
                         </div>
                         <div class="about-status about-status--right" data-depth="0.16">
                             <span>QA antes de publicar</span>
                             <strong>QA+</strong>
-                            <div class="status-bar"><b style="width:100%"></b></div>
+                            <div class="status-bar"><b class="status-bar__fill status-bar__fill--qa"></b></div>
                         </div>
                         <div class="about-micro-metrics" data-depth="0.09">
                             <div><strong>&lt;24h</strong><span>respuesta en días hábiles</span></div>
