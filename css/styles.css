@@ -874,7 +874,9 @@ nav.nav-scrolled {
     gap: 20px;
     width: 100%;
     align-items: stretch;
-}.hero-card-col {
+}
+
+.hero-card-col {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -890,6 +892,7 @@ nav.nav-scrolled {
     height: 18px;
     border-left: 1px dashed;
     margin-bottom: 12px;
+    align-self: center;
 }
 
 .hero-card-line--problem {
@@ -962,7 +965,7 @@ nav.nav-scrolled {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: 2px;
+    margin-top: auto;
 }
 
 .hero-badge-label {
@@ -1008,21 +1011,21 @@ nav.nav-scrolled {
 }
 
 .hero-badge-icon--success {
-    color: #3fe18e;
-    background: rgba(29, 91, 59, 0.3);
-    border: 1px solid rgba(63, 225, 142, 0.18);
+    color: #6f6bff;
+    background: rgba(60, 55, 150, 0.3);
+    border: 1px solid rgba(111, 107, 255, 0.22);
 }
 
 .hero-badge-icon--primary {
-    color: #7d68ff;
-    background: rgba(55, 38, 120, 0.3);
-    border: 1px solid rgba(125, 104, 255, 0.18);
+    color: #00c2ff;
+    background: rgba(0, 104, 145, 0.26);
+    border: 1px solid rgba(0, 194, 255, 0.22);
 }
 
 .hero-badge-icon--accent {
-    color: #f2b53a;
-    background: rgba(95, 62, 14, 0.3);
-    border: 1px solid rgba(242, 181, 58, 0.18);
+    color: #ff7a18;
+    background: rgba(128, 61, 12, 0.3);
+    border: 1px solid rgba(255, 122, 24, 0.22);
 }
 
 .hero-badge-card strong {
@@ -1054,18 +1057,18 @@ nav.nav-scrolled {
 }
 
 .hero-badge-pulse--success {
-    background: #2fe08b;
-    box-shadow: 0 0 0 4px rgba(47, 224, 139, 0.12);
+    background: #6f6bff;
+    box-shadow: 0 0 0 4px rgba(111, 107, 255, 0.12);
 }
 
 .hero-badge-pulse--primary {
-    background: #7d68ff;
-    box-shadow: 0 0 0 4px rgba(125, 104, 255, 0.12);
+    background: #00c2ff;
+    box-shadow: 0 0 0 4px rgba(0, 194, 255, 0.12);
 }
 
 .hero-badge-pulse--accent {
-    background: #f2b53a;
-    box-shadow: 0 0 0 4px rgba(242, 181, 58, 0.12);
+    background: #ff7a18;
+    box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.12);
 }
 
 @keyframes floatCardA {
