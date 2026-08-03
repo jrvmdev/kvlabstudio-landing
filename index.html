@@ -732,22 +732,22 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" toolname="request_project_diagnostic" tooldescription="Sends a project inquiry to KvLab Studio to request a free diagnostic and receive a response within 24 hours.">
                         <div class="form-group">
                             <label for="name">Nombre completo</label>
-                            <input type="text" id="name" name="name" required placeholder="Tu nombre" autocomplete="name">
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre" autocomplete="name" toolparamdescription="Full name of the person requesting the diagnostic.">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email">
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email" toolparamdescription="Email address where KvLab Studio should reply.">
                         </div>
                         <div class="form-group">
                             <label for="phone">Teléfono (opcional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+54 9 11 2277-3720" autocomplete="tel">
+                            <input type="tel" id="phone" name="phone" placeholder="+54 9 11 2277-3720" autocomplete="tel" toolparamdescription="Optional phone number for follow-up.">
                         </div>
                         <div class="form-group">
                             <label for="project">Contame sobre tu proyecto</label>
-                            <textarea id="project" name="project" rows="5" required placeholder="Describí tu idea, objetivos y cualquier detalle relevante..." autocomplete="off"></textarea>
+                            <textarea id="project" name="project" rows="5" required placeholder="Describí tu idea, objetivos y cualquier detalle relevante..." autocomplete="off" toolparamdescription="Project goals, requirements, and relevant context for the diagnostic."></textarea>
                         </div>
                         <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" hidden>
                         <button type="submit" class="btn btn-primary btn-block">
