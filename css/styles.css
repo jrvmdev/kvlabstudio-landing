@@ -3306,6 +3306,13 @@ footer {
     }
 
 @media (max-width: 768px) {
+    /* Do not delay the mobile LCP behind decorative entrance animations. */
+    .hero h1,
+    .hero p,
+    .cta-buttons {
+        animation: none;
+    }
+
     nav {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
@@ -3870,6 +3877,23 @@ footer {
     .float-icon--right-2 {
         right: 3%;
         top: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Keep the first mobile paint lightweight while retaining the visual direction. */
+    .hero {
+        background:
+            radial-gradient(72% 58% at 100% 12%, rgba(0, 194, 255, 0.2), transparent 72%),
+            radial-gradient(62% 50% at 8% 100%, rgba(255, 122, 24, 0.12), transparent 74%),
+            linear-gradient(180deg, #061426 0%, #020812 100%);
+    }
+
+    .hero::before,
+    .hero::after,
+    .hero-grid,
+    .hero-cinematic-bg {
+        display: none;
     }
 }
 

@@ -6,7 +6,9 @@ KvLabStudio ayuda a empresas y profesionales a conseguir más leads, vender mejo
 
 ## Sitio principal
 
-- Home: https://kvlabstudio.com/
+- [Inicio](https://kvlabstudio.com/): servicios, proyectos, proceso y contacto.
+- [Servicios](https://kvlabstudio.com/servicios.html): alcance de desarrollo web, automatización y sistemas.
+- [Recursos](https://kvlabstudio.com/recursos.html): guías y recursos para negocios digitales.
 
 ## Qué hacemos
 
@@ -31,11 +33,11 @@ KvLabStudio ayuda a empresas y profesionales a conseguir más leads, vender mejo
 
 ## Contacto
 
-- WhatsApp: https://wa.me/5491122773720
-- Email: mailto:hola@kvlabstudio.com
+- [WhatsApp](https://wa.me/5491122773720): contacto directo para consultas y diagnósticos.
+- [Email](mailto:hola@kvlabstudio.com): hola@kvlabstudio.com
 
 ## Redes
 
-- GitHub: https://github.com/jrvmdev
-- X: https://x.com/KvLabStudio
-- Instagram: https://www.instagram.com/kvlabstudio
+- [GitHub](https://github.com/jrvmdev)
+- [X](https://x.com/KvLabStudio)
+- [Instagram](https://www.instagram.com/kvlabstudio)

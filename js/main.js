@@ -219,7 +219,18 @@ if (nav && 'ResizeObserver' in window) {
   navObserver.observe(nav);
 }
 
-initHeroCinematicBackground();
+window.addEventListener(
+  'load',
+  () => {
+    const startHeroEffects = () => initHeroCinematicBackground();
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(startHeroEffects, { timeout: 2500 });
+      return;
+    }
+    window.setTimeout(startHeroEffects, 600);
+  },
+  { once: true }
+);
 
 if (heroShowcase && !prefersReducedMotion) {
   const layers = heroShowcase.querySelectorAll('[data-depth]');
@@ -376,7 +387,7 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot, .portfolio-card, .hero-badge-card')
+  .querySelectorAll('.service-card, .process-step, .faq-item, .feature-tag, .project-screenshot, .portfolio-card')
   .forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
