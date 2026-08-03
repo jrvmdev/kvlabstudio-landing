@@ -8,22 +8,26 @@ window.gtag = gtag;
 gtag('js', new Date());
 gtag('config', 'G-ME85J1FH9J');
 
+var analyticsLoaded = false;
+
 function loadAnalytics() {
+  if (analyticsLoaded) return;
+  analyticsLoaded = true;
+
   var script = document.createElement('script');
   script.async = true;
   script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ME85J1FH9J';
   document.head.appendChild(script);
 }
 
+['pointerdown', 'keydown', 'touchstart'].forEach(function (eventName) {
+  window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+});
+
 window.addEventListener(
   'load',
   function () {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(loadAnalytics, { timeout: 4000 });
-      return;
-    }
-
-    window.setTimeout(loadAnalytics, 1200);
+    window.setTimeout(loadAnalytics, 8000);
   },
   { once: true }
 );
