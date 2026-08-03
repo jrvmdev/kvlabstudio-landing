@@ -43,6 +43,41 @@ html {
     --font-display: 'Sora', 'Manrope', 'Segoe UI', Roboto, sans-serif;
 }
 
+.ph {
+    display: inline-grid;
+    place-items: center;
+    width: 1em;
+    height: 1em;
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: none;
+}
+
+.ph::before {
+    display: block;
+}
+
+.ph-arrow-down::before { content: "↓"; }
+.ph-check::before { content: "✓"; }
+.ph-clock::before { content: "◷"; }
+.ph-clock-countdown::before { content: "◴"; }
+.ph-code::before { content: "<>"; font-size: 0.74em; letter-spacing: -0.08em; }
+.ph-envelope-simple::before { content: "@"; }
+.ph-file-text::before { content: "▤"; }
+.ph-gear-six::before { content: "⚙"; }
+.ph-github-logo::before { content: "GH"; font-size: 0.52em; letter-spacing: -0.05em; }
+.ph-instagram-logo::before { content: "IG"; font-size: 0.52em; letter-spacing: -0.05em; }
+.ph-layout::before { content: "▦"; }
+.ph-map-pin::before { content: "⌖"; }
+.ph-robot::before { content: "AI"; font-size: 0.58em; letter-spacing: -0.04em; }
+.ph-rocket-launch::before { content: "↗"; }
+.ph-shield-check::before { content: "⬡"; }
+.ph-whatsapp-logo::before { content: "WA"; font-size: 0.52em; letter-spacing: -0.05em; }
+.ph-x::before { content: "×"; }
+.ph-x-logo::before { content: "X"; }
+
 body {
     font-family: var(--font-body);
     background:

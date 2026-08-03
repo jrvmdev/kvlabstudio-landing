@@ -9,6 +9,7 @@ const aboutScene = document.querySelector('.about-placeholder');
 const heroSection = document.querySelector('.hero');
 const portfolioModal = document.getElementById('portfolioModal');
 const portfolioCards = document.querySelectorAll('.portfolio-card[data-project]');
+let navHeight = nav ? Math.round(nav.getBoundingClientRect().height) : 88;
 const portfolioData = {
   'sentinl-commerce': {
     state: 'Caso destacado · 2026',
@@ -198,8 +199,7 @@ const initHeroCinematicBackground = () => {
 };
 
 const getNavOffset = () => {
-  const base = nav ? nav.offsetHeight : 88;
-  return base + 2;
+  return navHeight + 2;
 };
 
 const updateNavState = () => {
@@ -209,6 +209,16 @@ const updateNavState = () => {
 
 updateNavState();
 window.addEventListener('scroll', updateNavState, { passive: true });
+
+if (nav && 'ResizeObserver' in window) {
+  const navObserver = new ResizeObserver(([entry]) => {
+    if (entry) {
+      navHeight = Math.round(entry.contentRect.height) || navHeight;
+    }
+  });
+  navObserver.observe(nav);
+}
+
 initHeroCinematicBackground();
 
 if (heroShowcase && !prefersReducedMotion) {
