@@ -23,6 +23,32 @@ const portfolioData = {
       'Más control diario, menos reacción tardía y decisiones comerciales con mejor contexto.',
     link: '',
   },
+  'bukta-shop': {
+    state: 'E-commerce · CMS',
+    title: 'Bukta Shop, e-commerce custom',
+    summary:
+      'Tienda online reconstruida desde cero con catálogo administrable, carrito, flujo de pedido y una capa técnica preparada para operar con mayor confianza.',
+    problem:
+      'El cliente venía de una web rota, con baja confiabilidad operativa y sin una estructura clara para gestionar productos, pedidos y futuras integraciones de pago.',
+    solution:
+      'Se desarrolló una experiencia e-commerce custom con panel CMS personalizado, catálogo editable, checkout asistido, hardening web y cabeceras de seguridad con calificación A+.',
+    result:
+      'La marca pasó a tener una tienda profesional, administrable y técnicamente alineada con los requisitos de seguridad evaluados para una futura pasarela de pago bancaria.',
+    link: 'https://buktashop.com',
+  },
+  spmp: {
+    state: 'Web corporativa · Industrial',
+    title: 'SPMP, presencia corporativa industrial',
+    summary:
+      'Rediseño y desarrollo custom para transformar una web obsoleta en una presencia B2B clara, profesional y orientada a solicitudes de cotización.',
+    problem:
+      'La empresa tenía una web desactualizada que no reflejaba su trayectoria, capacidad operativa, flota ni cobertura real en proyectos petroleros, mineros y civiles.',
+    solution:
+      'Se diseñó una arquitectura de contenido profesional con narrativa industrial, secciones de capacidades, flota, cobertura y contacto, junto con un CMS personalizado para mantenimiento interno.',
+    result:
+      'SPMP quedó con una plataforma más sólida para presentar servicios técnicos, respaldar conversaciones comerciales y convertir visitas en pedidos de cotización.',
+    link: 'https://spmp.com.ar',
+  },
   academia: {
     state: 'Academia · Scouting',
     title: 'Academia, talento venezolano',
@@ -499,6 +525,7 @@ if (portfolioModal && portfolioCards.length > 0) {
   const closeModal = () => {
     portfolioModal.classList.remove('is-open');
     portfolioModal.setAttribute('aria-hidden', 'true');
+    portfolioModal.setAttribute('inert', '');
     document.body.classList.remove('modal-open');
     if (lastFocusedCard) {
       lastFocusedCard.focus();
@@ -527,6 +554,7 @@ if (portfolioModal && portfolioCards.length > 0) {
 
     portfolioModal.classList.add('is-open');
     portfolioModal.setAttribute('aria-hidden', 'false');
+    portfolioModal.removeAttribute('inert');
     document.body.classList.add('modal-open');
     portfolioModal.querySelector('.portfolio-modal__close')?.focus();
   };

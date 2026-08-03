@@ -1236,6 +1236,16 @@ nav.nav-scrolled {
     overflow-x: clip;
 }
 
+@supports (content-visibility: auto) {
+    @media (max-width: 1024px) {
+        .section,
+        footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 760px;
+        }
+    }
+}
+
 .page-shell {
     padding-top: 84px;
 }

@@ -37,12 +37,12 @@
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/phosphor-regular.css">
-    <link rel="stylesheet" href="css/styles.css?v=20260506-contact-layout">
+    <link rel="stylesheet" href="/css/phosphor-regular.css?v=20260803-subset">
+    <link rel="stylesheet" href="css/styles.css?v=20260803-performance">
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ME85J1FH9J"></script>
-    <script src="js/head.js"></script>
+    <script src="js/head.js?v=20260803-performance" defer></script>
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -359,6 +359,36 @@
                     </div>
                 </article>
 
+                <!-- Bukta Shop -->
+                <article class="portfolio-card" data-project="bukta-shop" tabindex="0" aria-label="Abrir detalle de Bukta Shop">
+                    <div class="portfolio-media">
+                        <img class="portfolio-image" src="/images/bukta-shop.webp" alt="Bukta Shop, tienda online con catálogo y CMS personalizado" loading="lazy">
+                        <div class="portfolio-state">E-commerce · CMS</div>
+                    </div>
+                    <div class="portfolio-body">
+                        <h3>Bukta Shop, e-commerce custom</h3>
+                        <p>Reconstrucción completa de una tienda online con catálogo, carrito, flujo de pedido y panel CMS a medida para gestión diaria.</p>
+                        <p class="portfolio-note">Proyecto preparado con hardening web, cabeceras de seguridad A+ y base técnica validada para una futura integración de pasarela de pago bancaria.</p>
+                        <div class="portfolio-tags"><span>CMS a medida</span><span>Security headers A+</span><span>Catálogo editable</span><span>Checkout asistido</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
+                    </div>
+                </article>
+
+                <!-- SPMP -->
+                <article class="portfolio-card" data-project="spmp" tabindex="0" aria-label="Abrir detalle de SPMP">
+                    <div class="portfolio-media">
+                        <img class="portfolio-image" src="/images/spmp.webp" alt="SPMP, sitio corporativo industrial con desarrollo custom" loading="lazy">
+                        <div class="portfolio-state">Web corporativa · Industrial</div>
+                    </div>
+                    <div class="portfolio-body">
+                        <h3>SPMP, presencia corporativa industrial</h3>
+                        <p>Rediseño profesional y desarrollo custom para una empresa de servicios petroleros y mineros que necesitaba comunicar capacidad operativa real.</p>
+                        <p class="portfolio-note">La web anterior estaba obsoleta; se reemplazó por una experiencia clara, robusta y orientada a cotizaciones, flota, cobertura y servicios técnicos.</p>
+                        <div class="portfolio-tags"><span>Diseño custom</span><span>Narrativa B2B</span><span>CMS personalizado</span><span>Conversión a cotización</span></div>
+                        <button type="button" class="portfolio-trigger">Ver detalle del caso</button>
+                    </div>
+                </article>
+
                 <!-- Academia -->
                 <article class="portfolio-card" data-project="academia" tabindex="0" aria-label="Abrir detalle de Academia">
                     <div class="portfolio-media">
@@ -478,7 +508,7 @@
         </div>
     </section>
 
-    <div class="portfolio-modal" id="portfolioModal" aria-hidden="true">
+    <div class="portfolio-modal" id="portfolioModal" aria-hidden="true" inert>
         <div class="portfolio-modal__backdrop" data-modal-close></div>
         <div class="portfolio-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="portfolioModalTitle">
             <button type="button" class="portfolio-modal__close" data-modal-close aria-label="Cerrar detalle del proyecto">
@@ -795,6 +825,6 @@
     </footer>
 
     </main>
-    <script src="js/main.js?v=20260506-contact" defer></script>
+    <script src="js/main.js?v=20260803-performance" defer></script>
 </body>
 </html>
