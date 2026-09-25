@@ -13,42 +13,55 @@ let navHeight = nav ? Math.round(nav.getBoundingClientRect().height) : 88;
 const portfolioData = {
   'sentinl-commerce': {
     state: 'Caso destacado · 2026',
-    title: 'Sentinl Commerce, inteligencia predictiva B2B',
+    title: 'Sentinl Commerce, inteligencia operativa para ventas B2B',
     summary:
-      'Sistema enfocado en anticipar quiebres, ordenar prioridades y activar respuestas más rápidas para cuidar ventas y operación.',
+      'Sistema para detectar desvíos de compra, ordenar prioridades y activar alertas antes de que una oportunidad se pierda.',
     problem:
-      'El equipo necesitaba detectar faltantes y reaccionar a tiempo sin depender de seguimiento manual constante.',
+      'El seguimiento manual hacía que los desvíos comerciales se detectaran tarde y que las acciones dependieran de revisar información dispersa.',
     solution:
-      'Se diseñó una vista operativa con alertas claras, priorización de acciones y lectura rápida del estado del negocio.',
+      'Se diseñó una capa operativa con señales por entidad, alertas automáticas y prioridades visibles para actuar con contexto.',
     result:
-      'Más control diario, menos reacción tardía y decisiones comerciales con mejor contexto.',
+      'Información más ordenada, menos seguimiento manual y decisiones comerciales con mejor contexto.',
     link: '',
   },
   'bukta-shop': {
     state: 'E-commerce · CMS',
     title: 'Bukta Shop, e-commerce custom',
     summary:
-      'Tienda online reconstruida desde cero con catálogo administrable, carrito, flujo de pedido y una capa técnica preparada para operar con mayor confianza.',
+      'Tienda online reconstruida desde cero con catálogo, carrito, flujo de pedido y CMS propio para la gestión diaria.',
     problem:
       'El cliente venía de una web rota, con baja confiabilidad operativa y sin una estructura clara para gestionar productos, pedidos y futuras integraciones de pago.',
     solution:
-      'Se desarrolló una experiencia e-commerce custom con panel CMS personalizado, catálogo editable, checkout asistido, hardening web y cabeceras de seguridad con calificación A+.',
+      'Se desarrolló una experiencia e-commerce custom con CMS propio, catálogo editable, checkout asistido y hardening web para una futura integración bancaria.',
     result:
-      'La marca pasó a tener una tienda profesional, administrable y técnicamente alineada con los requisitos de seguridad evaluados para una futura pasarela de pago bancaria.',
+      'La marca pasó a tener una tienda administrable, con infraestructura propia y una base técnica más preparada para evolucionar.',
     link: 'https://buktashop.com',
   },
   spmp: {
     state: 'Web corporativa · Industrial',
     title: 'SPMP, presencia corporativa industrial',
     summary:
-      'Rediseño y desarrollo custom para transformar una web obsoleta en una presencia B2B clara, profesional y orientada a solicitudes de cotización.',
+      'Sitio corporativo industrial para transformar una presencia obsoleta en una herramienta comercial clara y orientada a cotización.',
     problem:
       'La empresa tenía una web desactualizada que no reflejaba su trayectoria, capacidad operativa, flota ni cobertura real en proyectos petroleros, mineros y civiles.',
     solution:
-      'Se diseñó una arquitectura de contenido profesional con narrativa industrial, secciones de capacidades, flota, cobertura y contacto, junto con un CMS personalizado para mantenimiento interno.',
+      'Se diseñó una arquitectura con capacidades, flota, cobertura y contacto, junto con un CMS personalizado para mantenimiento interno.',
     result:
-      'SPMP quedó con una plataforma más sólida para presentar servicios técnicos, respaldar conversaciones comerciales y convertir visitas en pedidos de cotización.',
+      'SPMP quedó con una plataforma más sólida para presentar servicios técnicos y respaldar conversaciones comerciales de cotización.',
     link: 'https://spmp.com.ar',
+  },
+  viagen: {
+    state: 'Web corporativa · Industria',
+    title: 'ViaGen, presencia digital para operaciones industriales',
+    summary:
+      'Sitio corporativo para traducir capacidad operativa —flota, cobertura y recursos en campo— en una propuesta clara para proyectos exigentes.',
+    problem:
+      'La empresa necesitaba presentar servicios, equipos, áridos y cobertura regional de forma ordenada, sin depender de explicaciones manuales en cada consulta.',
+    solution:
+      'Se diseñó una experiencia con servicios, flota categorizada, actividades principales, cobertura en Neuquén, La Pampa y Río Negro, y acceso directo a consultas por WhatsApp.',
+    result:
+      'La capacidad operativa queda mejor explicada y cada consulta puede llegar con más contexto sobre el proyecto, los recursos y la zona requerida.',
+    link: 'https://www.viagen.com.ar/',
   },
   academia: {
     state: 'Academia · Scouting',
@@ -64,14 +77,14 @@ const portfolioData = {
     link: '',
   },
   'sentinl-narrativa': {
-    state: 'Brand Scan · Live',
-    title: 'Sentinl Narrativa, brand scan en tiempo real',
+    state: 'SaaS · Tiempo real',
+    title: 'Sentinl Narrativa, inteligencia narrativa en tiempo real',
     summary:
-      'Interfaz pensada para leer señales del mercado y detectar contexto útil sin perder velocidad.',
+      'Plataforma SaaS para centralizar señales de mercado y detectar contexto útil sin perder velocidad.',
     problem:
-      'Había mucha información dispersa y poca capacidad de lectura rápida para identificar tendencias o cambios relevantes.',
+      'La información estaba dispersa entre múltiples fuentes y era difícil detectar tendencias o cambios relevantes a tiempo.',
     solution:
-      'Se diseñó una experiencia que centraliza señales, resalta lo importante y facilita el monitoreo continuo.',
+      'Se diseñó una experiencia que centraliza fuentes, resalta señales relevantes y facilita el monitoreo continuo.',
     result:
       'Menos ruido, mejor lectura del contexto y una base más útil para actuar a tiempo.',
     link: '',
@@ -103,16 +116,16 @@ const portfolioData = {
     link: '',
   },
   propi360: {
-    state: 'Multi-tenant · Admin',
-    title: 'Propi360, panel multi-tenant',
+    state: 'SaaS · Inmobiliarias',
+    title: 'Propi360, plataforma multi-tenant para inmobiliarias',
     summary:
-      'Dashboard para centralizar métricas y tareas operativas en un solo entorno de trabajo.',
+      'Infraestructura digital para gestionar propiedades, contactos, oportunidades y sitios propios por inmobiliaria.',
     problem:
-      'La operación necesitaba más visibilidad para seguir métricas, controlar accesos y ordenar la gestión diaria.',
+      'Cada inmobiliaria necesitaba operar con datos, usuarios y gestión propios sin perder visibilidad sobre sus oportunidades.',
     solution:
-      'Se armó un panel con información centralizada, estructura administrativa y foco en lectura rápida.',
+      'Se armó una arquitectura multi-tenant con gestión de propiedades, CRM, sitios por cliente y métricas de origen de leads.',
     result:
-      'Más control sobre la operación y mejores condiciones para decidir sin depender de planillas dispersas.',
+      'Cada operación tiene su propio entorno de trabajo y mejores condiciones para gestionar oportunidades con contexto.',
     link: '',
   },
   'arcana-noir': {
@@ -475,64 +488,6 @@ document.querySelectorAll('a[href^="mailto:"]').forEach((el) => {
   el.addEventListener('click', () => trackConversion('email_click', el.textContent.trim() || 'Email CTA'));
 });
 
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('name')?.value?.trim() || '';
-    const email = document.getElementById('email')?.value?.trim() || '';
-    const phone = document.getElementById('phone')?.value?.trim() || '';
-    const project = document.getElementById('project')?.value?.trim() || '';
-    const website = document.getElementById('website')?.value?.trim() || '';
-    const formStatus = document.getElementById('formStatus');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton ? submitButton.innerHTML : '';
-
-    if (formStatus) {
-      formStatus.hidden = false;
-      formStatus.classList.remove('is-error');
-      formStatus.textContent = 'Enviando consulta...';
-    }
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.innerHTML = 'Enviando... <span>&rarr;</span>';
-    }
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, project, website }),
-      });
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok || result.ok === false) {
-        throw new Error(result.message || 'No se pudo enviar la consulta.');
-      }
-
-      contactForm.reset();
-      trackConversion('form_submit_email', 'Formulario de contacto');
-      if (formStatus) {
-        formStatus.classList.remove('is-error');
-        formStatus.textContent = 'Listo. Tu consulta fue enviada correctamente.';
-      }
-    } catch (error) {
-      if (formStatus) {
-        formStatus.classList.add('is-error');
-        formStatus.textContent =
-          error.message || 'No se pudo enviar la consulta. Probalo de nuevo en unos minutos.';
-      }
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.innerHTML = originalButtonText;
-      }
-    }
-  });
-}
-
 if (portfolioModal && portfolioCards.length > 0) {
   const modalTitle = document.getElementById('portfolioModalTitle');
   const modalState = document.getElementById('portfolioModalState');
@@ -591,7 +546,10 @@ if (portfolioModal && portfolioCards.length > 0) {
       });
     }
 
-    card.addEventListener('click', () => openModal(projectId, card));
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button')) return;
+      openModal(projectId, card);
+    });
     card.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
